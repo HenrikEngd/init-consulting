@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# INIT
 
-## Getting Started
+Marketing site for INIT, a Norwegian sole proprietorship that removes one
+recurring manual task at a time for small service businesses: automation,
+integrations, AI and small internal tools, at a fixed price and with an agreed
+delivery date.
 
-First, run the development server:
+Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and Framer Motion.
+One page plus a booking page. The only server code is the availability route,
+which reads free slots from a Google calendar when credentials are configured
+and falls back to opening hours when they are not.
+
+## Design
+
+Dark only, one typeface, no colour: hierarchy comes from three greys and from
+size, emphasis from light. Illustrations are line drawings of unit cubes on one
+isometric grid. The mark is `*>`. The full system, with every value and the
+reasoning behind it, is in [brand/DESIGN.md](brand/DESIGN.md); the tokens live
+in `src/app/globals.css`.
+
+## Structure
+
+- `src/app/page.tsx` assembles the sections; `src/app/book/` is the booking
+  page; `src/app/api/availability/` the calendar route.
+- `src/components/sections/` holds one component per section: Header, Hero,
+  Principles, Process, Projects, FAQ, Pricing, Booking, CTA, Footer.
+- `src/components/ui/IsometricFigures.tsx` draws the hero platform and the
+  three principle figures; `LogoMark.tsx` draws the mark.
+- `src/components/motion/FadeIn.tsx` is the shared entrance animation.
+- `src/lib/translations.ts` holds all copy in Norwegian (default) and English.
+  Edit both when wording changes.
+- `src/lib/site-config.ts` holds the contact email and LinkedIn URL.
+- `src/lib/testimonials.ts` holds client quotes. It is empty on purpose and
+  explains the rule.
+- `brand/` holds exported logos and LinkedIn banners; `decks/` the proposal and
+  handover PowerPoint templates and the script that builds them.
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.example` to `.env.local` and fill in one of the two calendar
+options to show real availability. Without it the site still runs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Any host that runs Next.js. Vercel is the zero-config option: connect the
+repository and set the calendar variables in the project settings.

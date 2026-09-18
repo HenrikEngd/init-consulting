@@ -1,26 +1,388 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens modelled on Linear's marketing site: a near-black canvas,
+ * a three-step text hierarchy (primary / secondary / tertiary), hairline
+ * borders instead of shadows, and one sparingly used accent.
+ * The site is dark-only by design, like the reference.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  --background: #08090a;
+  --bg-elevated: #0f1011;
+  --bg-level-3: #191a1b;
+
+  --fg-primary: #f7f8f8;
+  --fg-secondary: #d0d6e0;
+  --fg-tertiary: #8a8f98;
+
+  --line-primary: #37393a;
+  --line-secondary: #202122;
+  --line-tertiary: #18191a;
+  --border-translucent: #ffffff0d;
+
+  --accent: #f7f8f8;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-elevated: var(--bg-elevated);
+  --color-level-3: var(--bg-level-3);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--fg-primary);
+  --color-secondary: var(--fg-secondary);
+  --color-tertiary: var(--fg-tertiary);
+
+  --color-line: var(--line-primary);
+  --color-line-soft: var(--line-secondary);
+  --color-line-faint: var(--line-tertiary);
+  --color-hairline: var(--border-translucent);
+
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fg-primary);
+  font-family:
+    var(--font-sans),
+    "SF Pro Display",
+    -apple-system,
+    system-ui,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
+  /* Inter stylistic sets used by the reference: cv01 (open digits) + ss03. */
+  font-feature-settings: "cv01", "ss03";
+  font-variation-settings: "opsz" auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: color-mix(in srgb, #9c9da1 20%, transparent);
+}
+
+/*
+ * Auto-scrolling card rail.
+ *
+ * The card set is rendered three times and the track is translated by exactly
+ * one third, so the second copy lands where the first started and the loop has
+ * no visible seam. Three copies (rather than two) keep one set wider than any
+ * realistic viewport, so no gap opens at the wrap point on an ultrawide screen.
+ *
+ * Card spacing is a right margin on the cards, not a flex `gap`. With a gap,
+ * the track is 3 sets plus 2 extra gaps wide, a third of that is not a whole
+ * set, and the loop jumps once per cycle.
+ */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-100% / 3), 0, 0);
+  }
+}
+
+.marquee-rail {
+  position: relative;
+  /* The track is wider than the rail by design; clip it at the rail's own
+     edges so the cards stop at the page's content column, not the viewport. */
+  overflow: hidden;
+  /* Makes the rail the query container the cards measure themselves against,
+     so `cqw` below is the content width of the surrounding column. Reading it
+     from the layout rather than restating `max-w-[1340px]` and the page
+     padding here keeps the two from drifting apart. */
+  container-type: inline-size;
+
+  --card-gap: 12px;
+}
+
+/*
+ * Just under four cards across the content column, so the outer two are always
+ * sliced by the edge shadow rather than sitting flush with it — that overlap
+ * is what makes the row read as a rail continuing past the column instead of
+ * as four cards that happen to end there. The lower bound keeps a phone
+ * showing one card and a hint of the next; the upper bound stops them
+ * ballooning on a wide screen.
+ */
+.rail-card {
+  width: clamp(284px, calc((100cqw - 3 * var(--card-gap)) / 3.4), 520px);
+  margin-right: var(--card-gap);
+
+  /*
+   * The card dissolves into the page instead of ending on an edge.
+   *
+   * A mask rather than an overlay: an overlay would have to repaint the page
+   * background on top of the card, and the card's lit ring would still be
+   * drawn underneath it. The mask removes the card's own painting, so the
+   * bottom edge, the two corners and the ring all disappear together.
+   *
+   * The fade is a fixed length, never a percentage. A long quote makes the
+   * card taller, and a percentage fade would then eat proportionally more of
+   * it. The bottom padding is the same custom property, so the last line of
+   * content always lands exactly where the mask is still fully opaque —
+   * whatever the card's height turns out to be.
+   *
+   * `mask-clip` is the border box, so this also clips the drop shadow that
+   * `shine-card` sets. That is intended: a shadow cast by an edge you cannot
+   * see reads as a mistake. On these cards the lit ring carries the elevation.
+   *
+   * The ramp is bent rather than linear: at the halfway mark the card is
+   * already down to a third of its opacity, not half. That puts the dark
+   * higher up the card without lengthening the fade — and the fade's length is
+   * content the card has to grow to carry, so it is the expensive half.
+   */
+  --rail-card-fade: 128px;
+  padding-bottom: var(--rail-card-fade);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - var(--rail-card-fade)),
+    rgba(0, 0, 0, 0.34) calc(100% - var(--rail-card-fade) * 0.5),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - var(--rail-card-fade)),
+    rgba(0, 0, 0, 0.34) calc(100% - var(--rail-card-fade) * 0.5),
+    transparent 100%
+  );
+}
+
+/*
+ * The rail runs under a shadow at both edges instead of being clipped or
+ * masked to transparent: the outer cards stay legible, they just sit in the
+ * dark, which reads as a rail continuing past the viewport rather than as a
+ * row that stops. An overlay rather than `mask-image`: a mask here would take
+ * the cards' top edge and their lit ring with it, and the cards are supposed
+ * to be dimmed at the sides, not dissolved — the deliberate dissolve is the
+ * one at the bottom, which each card masks for itself. `pointer-events: none`
+ * keeps hover-to-pause working through the overlay.
+ */
+.marquee-rail::before,
+.marquee-rail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: clamp(64px, 14cqw, 200px);
+  pointer-events: none;
+}
+
+.marquee-rail::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--background) 12%,
+    color-mix(in srgb, var(--background) 55%, transparent) 55%,
+    transparent
+  );
+}
+
+.marquee-rail::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--background) 12%,
+    color-mix(in srgb, var(--background) 55%, transparent) 55%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+
+/* Let a reader stop the rail to finish reading a card. */
+.marquee-rail:hover .marquee-track,
+.marquee-rail:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  /* Without the animation the duplicated sets are just repeated content. */
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+  .marquee-rail {
+    overflow-x: auto;
+  }
+}
+
+/*
+ * Elevated card with a lit edge — the "shine" on the reference cards.
+ *
+ * How strong the light is, how far it reaches and how the edge ramps off are
+ * defined once, as the custom properties below. A variant sets only where the
+ * light comes from: the four `--shine-*` direction properties, nothing else.
+ * That way every card on the page is lit by the same light, and a card that
+ * faces a different way still matches the rest.
+ *
+ * Two decorative layers, no extra markup:
+ *   1. the surface: the light source itself, over a gradient that keeps the
+ *      far side darker, so the card reads as tilted towards the light rather
+ *      than as a flat swatch;
+ *   2. `::before`: a 1px gradient border. It is a padded box masked to its own
+ *      edge, because `border-image` does not follow `border-radius`, and a
+ *      plain border cannot fade from bright at the source to nothing away from
+ *      it. Only the ring is ever painted, and it never takes the cursor.
+ */
+.shine-card {
+  /* Direction — the only thing a variant overrides. */
+  --shine-origin: 50% -12%;
+  --shine-spread: 120% 66%;
+  --shine-surface-angle: 180deg;
+  --shine-edge-angle: 180deg;
+
+  /* Intensity — shared by every card. */
+  --shine-glow: rgba(255, 255, 255, 0.11);
+  --shine-reach: 62%;
+  --shine-surface-from: #15161a;
+  --shine-surface-to: #0c0d0e;
+  --shine-surface-end: 64%;
+  --shine-edge-near: rgba(255, 255, 255, 0.36);
+  --shine-edge-mid: rgba(255, 255, 255, 0.06);
+  --shine-edge-far: rgba(255, 255, 255, 0.025);
+
+  position: relative;
+  background:
+    radial-gradient(
+      var(--shine-spread) at var(--shine-origin),
+      var(--shine-glow),
+      transparent var(--shine-reach)
+    ),
+    linear-gradient(
+      var(--shine-surface-angle),
+      var(--shine-surface-from) 0%,
+      var(--shine-surface-to) var(--shine-surface-end)
+    );
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.9);
+}
+
+.shine-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    var(--shine-edge-angle),
+    var(--shine-edge-near),
+    var(--shine-edge-mid) 38%,
+    var(--shine-edge-far)
+  );
+  /* Paint the padding box, subtract the content box: a 1px ring is left. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  /* Hover brightens the ring. Opacity animates; a gradient does not. */
+  opacity: 0.85;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.shine-card:hover::before {
+  opacity: 1;
+}
+
+/*
+ * A pair of cards lit by one source hanging between them: the left card takes
+ * its light from its own top-right corner and the right card from its top-left,
+ * so the highlight reads as continuing across the gap rather than each card
+ * being lit from its own middle.
+ *
+ * Only from `lg` up, which is where the pair sits side by side. Stacked on a
+ * phone there is no gap to light, and the centred direction above is the right
+ * one.
+ */
+@media (min-width: 64rem) {
+  .shine-from-top-right {
+    --shine-origin: 100% -6%;
+    --shine-spread: 80% 72%;
+    --shine-surface-angle: 204deg;
+    --shine-edge-angle: 212deg;
+  }
+
+  .shine-from-top-left {
+    --shine-origin: 0% -6%;
+    --shine-spread: 80% 72%;
+    --shine-surface-angle: 156deg;
+    --shine-edge-angle: 148deg;
+  }
+}
+
+/*
+ * Current running through the hero workflow's connectors.
+ *
+ * Two paths are drawn per connection: a faint solid wire, and this dashed one
+ * over it. The dash pattern is 10 units long and the offset animates by two
+ * whole patterns, so the loop has no seam. `vector-effect` keeps the wire one
+ * pixel wide whatever the SVG is scaled to.
+ */
+@keyframes wire-current {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.wire-current {
+  stroke-dasharray: 2 8;
+  animation: wire-current 1.7s linear infinite;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Without the flow the dashes say nothing; leave the solid wire to it. */
+  .wire-current {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/*
+ * A square of the hero platform's grid. The only part of the figure that
+ * takes the pointer; the svg around it is `pointer-events: none`. The
+ * brightness is set inline by the component, this just makes the change
+ * ease in and out rather than snap.
+ */
+.grid-cell {
+  pointer-events: all;
+  transition: fill-opacity 260ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/*
+ * The dashed plane under the four cubes of the second principle figure
+ * drifts slowly along its own outline: the pattern is 7 units long and the
+ * offset moves by one pattern, so the loop has no seam.
+ */
+@keyframes plane-drift {
+  to {
+    stroke-dashoffset: -7;
+  }
+}
+
+.plane-drift {
+  animation: plane-drift 2.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plane-drift {
+    animation: none;
+  }
 }
