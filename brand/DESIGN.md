@@ -45,8 +45,11 @@ Rules:
 - **Inter** for everything, loaded through `next/font` as `--font-inter`, with
   `font-feature-settings: "cv01", "ss03"` (open digits, the alternate `a`).
 - **Geist Mono** (`--font-geist-mono`) only for small uppercase labels:
-  figure numbers (`FIG 0.1`), the language toggle, price notes, footers on
-  slides. 11px, letter-spacing 0.04–0.06em, tertiary grey.
+  figure numbers (`FIG 0.1`), price notes, footers on slides. 11px,
+  letter-spacing 0.04–0.06em, tertiary grey. Not the language selector: it
+  sits among the nav links and is read as one of them, so it takes their
+  type (13px, weight 510, tracking -0.011em) and the menu's codes take the
+  size of the row they sit in.
 - Weights are set by number, not by name: `510` for headings and emphasised
   text, `560` for the wordmark. Nothing is bold in the 700 sense.
 - Negative tracking throughout: `-0.011em` on body, `-0.02em` on headings,

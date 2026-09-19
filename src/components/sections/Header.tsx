@@ -136,7 +136,7 @@ export function Header() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="font-mono text-[11px] tracking-[0.04em]">
+              <span className="text-[13px] font-[510] tracking-[-0.011em]">
                 {lang.toUpperCase()}
               </span>
               <svg
@@ -190,7 +190,7 @@ export function Header() {
                       }`}
                     >
                       {label}
-                      <span className="font-mono text-[10px] tracking-[0.04em] text-tertiary">
+                      <span className="text-[12px] font-[510] tracking-[-0.011em] text-tertiary">
                         {code.toUpperCase()}
                       </span>
                     </button>
