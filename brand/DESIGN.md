@@ -221,17 +221,22 @@ Motion is used to show things arriving and responding, never to decorate.
 - **Norwegian (bokmål) is the default**; English is a toggle. Write the
   Norwegian first and translate, not the other way round.
 - **Positioning is descriptive, not slogan-led.** Name the work, the scope and
-  the outcome plainly. Do not turn the one-week format into a catchphrase.
-- **The service is the product, never the job title.** The page sells a week,
-  a thing a business can buy, and describes what that week gives. It does not
-  introduce the person as a role. Write "uken starter der jobben gjøres", not
-  "jeg sitter der jobben gjøres": the first describes what the customer gets,
+  the outcome plainly. No format is turned into a catchphrase.
+- **The service is the product, never the job title.** The page sells a piece
+  of work a business can commission, and describes what that work delivers. It
+  does not introduce the person as a role. Write "arbeidet forstås først", not
+  "jeg forstår arbeidet først": the first describes what the customer gets,
   the second is a claim about the speaker and reads as a résumé.
+- **The scope is not fixed in advance.** An engagement is one priority, sized
+  to the case; the length is what it takes, and it is agreed before work
+  starts. Do not write a standard duration into the copy. The two prices on
+  the page are the whole commercial story: a fixed price for a scoped
+  engagement, and a quote after scoping for anything larger.
 - Avoid naming delivery methodologies unless the term is useful to the buyer.
   The offer should be understandable without industry terminology.
 - Sentences are short and concrete: what takes time, what changes, what it
-  costs, when it is delivered. Numbers are given plainly (24 000 kr, fem
-  arbeidsdager, 1 490 kr/mnd).
+  costs, when it is delivered. Numbers are given plainly (12 490 kr, 30
+  dager).
 - **Never**: em dashes as a pivot, "not X but Y" constructions, "from X to Y"
   titles, paired adjectives as titles ("simple and straightforward"), trailing
   "making ... clear" clauses, "seamless", "unlock", "empower", "leverage",
