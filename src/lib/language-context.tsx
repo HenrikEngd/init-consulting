@@ -42,17 +42,50 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    try {
-      window.localStorage.setItem(STORAGE_KEY, lang);
-    } catch {
-      // ignore
-    }
   }, [lang]);
 
-  const setLang = useCallback((next: Lang) => setLangState(next), []);
+  /**
+   * Store the choice, and say whether it will survive a reload.
+   *
+   * The effect above used to do this, but an effect runs after the render
+   * that triggered it, which is too late when the next thing to happen is a
+   * reload: the page would come back reading whatever was stored before.
+   */
+  const persist = useCallback((next: Lang) => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+      return true;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  /**
+   * Change the language by reloading the page in it.
+   *
+   * The choice is written first, then the page is reloaded and reads it back
+   * on mount. The URL is untouched, so a reader deep in the page comes back
+   * where they were, on the page they were on.
+   *
+   * Where the choice cannot be stored — a private window, blocked site data —
+   * a reload would return in the old language, so the language is changed in
+   * place instead. Switching without a reload is better than not switching.
+   */
+  const setLang = useCallback(
+    (next: Lang) => {
+      if (next === lang) return;
+      if (persist(next)) {
+        window.location.reload();
+        return;
+      }
+      setLangState(next);
+    },
+    [lang, persist]
+  );
+
   const toggleLang = useCallback(
-    () => setLangState((prev) => (prev === "no" ? "en" : "no")),
-    []
+    () => setLang(lang === "no" ? "en" : "no"),
+    [lang, setLang]
   );
 
   const value = useMemo<LanguageContextValue>(
