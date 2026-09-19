@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "INIT — Automatisering og teknisk hjelp for småbedrifter",
+  title: {
+    default: "INIT Consulting",
+    template: "%s — INIT Consulting",
+  },
   description:
     "INIT hjelper små norske tjenestebedrifter med automatisering, integrasjoner, AI og små tekniske forbedringer. Ett konkret problem av gangen.",
 };

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { BookingForm } from "@/components/sections/BookingForm";
 
 export const metadata: Metadata = {
-  title: "Book en samtale — INIT",
+  title: "Book en samtale",
   description: "Bekreft tidspunkt for en uforpliktende prat om automatisering.",
 };
 

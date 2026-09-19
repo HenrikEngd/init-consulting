@@ -245,6 +245,7 @@ Motion is used to show things arriving and responding, never to decorate.
 | `init-lockup-outline.png` | Mark + "INIT" outlined, 1024² |
 | `init-linkedin-banner-profile.png` | 1584 × 396 |
 | `init-linkedin-banner-company.png` | 1128 × 191 |
+| `init-signature-dark.png` | Mark + "INIT" on the canvas, 380 × 96 |
 
 Export rules, because an export is seen smaller and compressed:
 
@@ -256,6 +257,19 @@ Export rules, because an export is seen smaller and compressed:
 - The LinkedIn banner keeps its left half empty (the profile photo overlays
   it), sets the headline in the right half, and carries only the columns
   figure, oriented as on the site.
+- The signature lockup is drawn at twice its display size, so it is placed at
+  **190 × 48** and stays sharp on a retina screen. Its dark plate is trimmed
+  to a margin of about a tenth of the glyph height, so it reads as the lockup
+  rather than as a black band. It was cut down from an 1800 × 616 master,
+  which a larger export should start from again:
+  `git show 87d23c2:brand/init-signature-dark.png > master.png`.
+
+**The browser icons** (`src/app/`) are the mark alone, white on the canvas, cut
+from `init-mark-white.png`: `favicon.ico` at 16 and 32, `icon.svg` drawn from
+the same geometry as `LogoMark`, and `apple-icon.png` at 180. The mark spans
+90% of the icon; on the 16px frame its antialiased edges are lifted towards
+white (gamma 0.6), since a straight downscale leaves the asterisk grey. The
+apple icon holds the mark to 60% so iOS can round the corners off it.
 
 ## 10. Beyond the site
 

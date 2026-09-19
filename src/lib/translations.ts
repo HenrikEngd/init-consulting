@@ -93,7 +93,7 @@ export interface Dictionary {
 
 const no: Dictionary = {
   meta: {
-    title: "INIT — Automatisering og teknisk hjelp for småbedrifter",
+    title: "INIT Consulting",
     description:
       "INIT hjelper små norske tjenestebedrifter med automatisering, integrasjoner, AI og små tekniske forbedringer. Ett konkret problem av gangen, til avtalt pris.",
   },
@@ -323,7 +323,7 @@ const no: Dictionary = {
 
 const en: Dictionary = {
   meta: {
-    title: "INIT — Automation and technical help for small businesses",
+    title: "INIT Consulting",
     description:
       "INIT helps small Norwegian service businesses with automation, integrations, AI and focused technical improvements. One concrete problem at a time, at an agreed price.",
   },
