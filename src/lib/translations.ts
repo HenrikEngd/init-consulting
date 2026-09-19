@@ -91,10 +91,19 @@ export interface Dictionary {
   about: {
     back: string;
     heading: string;
+    /** Describes the portrait for anyone who cannot see it. */
+    portraitAlt: string;
     /** One sentence, set brighter than the body, as on the front page. */
     lead: string;
     /** Body paragraphs, in order. */
     body: string[];
+    experienceTitle: string;
+    /**
+     * Prior roles, newest first. While this is empty the section is not
+     * rendered at all: a page with no history on it is only thin, whereas an
+     * invented one is a claim the reader can check.
+     */
+    experience: { role: string; org: string; period: string }[];
     contactTitle: string;
     contactBook: string;
   };
@@ -326,12 +335,15 @@ const no: Dictionary = {
   about: {
     back: "Tilbake til forsiden",
     heading: "Om meg",
+    portraitAlt: "Henrik Engdal",
     lead: "INIT er et enkeltpersonsforetak. Det er meg, Henrik Engdal, du snakker med i den første samtalen, og det er meg som bygger og leverer.",
     body: [
       "Jeg jobber alene og tar få oppdrag av gangen. Dere har én kontakt gjennom hele leveransen, fra avklaring til overlevering, og slipper å forklare det samme på nytt til nye folk.",
       "Arbeidet starter med å forstå rutinen før noe bygges. Jeg går gjennom hvordan jobben gjøres i dag, sammen med dem som gjør den, og bygger videre på verktøyene og dataene dere allerede har.",
       "Bakgrunnen min er teknisk. Jeg bygger løsningene selv, og jeg sier fra når en forbedring ikke er verdt det den koster.",
     ],
+    experienceTitle: "Bakgrunn",
+    experience: [],
     contactTitle: "Ta kontakt",
     contactBook: "Book en innledende samtale",
   },
@@ -568,12 +580,15 @@ const en: Dictionary = {
   about: {
     back: "Back to the front page",
     heading: "About me",
+    portraitAlt: "Henrik Engdal",
     lead: "INIT is a sole proprietorship. I am Henrik Engdal, the person you speak to in the first conversation and the person who builds and delivers.",
     body: [
       "I work alone and take on few engagements at a time. You have one point of contact from scoping through to handover, and never have to explain the same thing again to someone new.",
       "The work starts by understanding the routine before anything is built. I go through how the job is done today, together with the people who do it, and build on the tools and the data you already have.",
       "My background is technical. I build the solutions myself, and I say so when an improvement is not worth what it costs.",
     ],
+    experienceTitle: "Background",
+    experience: [],
     contactTitle: "Get in touch",
     contactBook: "Book an initial call",
   },

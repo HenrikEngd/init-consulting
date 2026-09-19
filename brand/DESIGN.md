@@ -144,6 +144,13 @@ are the only illustration style on the site; there are no photos, icons or
 stock graphics. All of it lives in `src/components/ui/IsometricFigures.tsx`
 and `src/lib/platform.ts`.
 
+**One photograph is allowed, and only one**: the portrait on the about page.
+A reader deciding whether to let a stranger into their systems is owed a
+face, so that image is information and not decoration. It is 132px square
+with a 14px radius and a hairline border, and it is the only photograph
+anywhere on the site. Until a file is set in `siteConfig.portrait` the mark
+holds the block, so the page keeps its shape without a path that 404s.
+
 **The grid.** A 2:1 rhombus: a horizontal step of 2 units matches a vertical
 step of 1. Two axes, `u` running down-right and `v` down-left; a point at grid
 `(u, v)` lands at `x = ox + (u − v)·w`, `y = oy + (u + v)·h` with `h = w/2`.
@@ -295,8 +302,9 @@ apple icon holds the mark to 60% so iOS can round the corners off it.
 
 ## 11. Do not
 
-- Add colour, gradients as decoration, icons, photos, illustrations that are
-  not cubes on the grid.
+- Add colour, gradients as decoration, icons, illustrations that are not
+  cubes on the grid, or any photograph other than the about page's portrait
+  (§6).
 - Put the mark on a tile, in a circle, on a card, or set it in a font.
 - Add a fourth card surface to the page.
 - Use accent bars, underlines beneath titles, eyebrow labels above titles.

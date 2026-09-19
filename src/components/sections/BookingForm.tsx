@@ -49,25 +49,28 @@ export function BookingForm() {
 
   return (
     <main className="mx-auto w-full max-w-[640px] px-5 pt-32 pb-24 sm:px-8 sm:pt-40">
-      <Link href="/" className="inline-flex items-center gap-2.5">
-        <LogoMark filled className="h-[17px] w-auto text-primary" />
-        <span className="text-[15px] font-[560] tracking-[-0.011em] text-primary">
-          {siteConfig.name}
-        </span>
-      </Link>
+      {/* The wordmark leads, the way back sits at the far edge of the same row. */}
+      <div className="flex items-center justify-between gap-6">
+        <Link href="/" className="inline-flex items-center gap-2.5">
+          <LogoMark filled className="h-[17px] w-auto text-primary" />
+          <span className="text-[15px] font-[560] tracking-[-0.011em] text-primary">
+            {siteConfig.name}
+          </span>
+        </Link>
 
-      <Link
-        href="/#book"
-        className="group mt-10 inline-flex items-center gap-2 text-[13px] tracking-[-0.011em] text-tertiary transition-colors duration-150 hover:text-primary"
-      >
-        <span
-          aria-hidden
-          className="transition-transform duration-200 group-hover:-translate-x-1"
+        <Link
+          href="/#book"
+          className="group inline-flex items-center gap-2 text-[13px] tracking-[-0.011em] text-tertiary transition-colors duration-150 hover:text-primary"
         >
-          ←
-        </span>
-        {t.bookingPage.back}
-      </Link>
+          <span
+            aria-hidden
+            className="transition-transform duration-200 group-hover:-translate-x-1"
+          >
+            ←
+          </span>
+          {t.bookingPage.back}
+        </Link>
+      </div>
 
       <h1 className="mt-7 text-[32px] font-[510] leading-[1.1] tracking-[-0.022em] text-primary sm:text-[40px]">
         {t.bookingPage.heading}
