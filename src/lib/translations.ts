@@ -95,75 +95,75 @@ const no: Dictionary = {
   meta: {
     title: "INIT Consulting",
     description:
-      "En uke på innsiden: en utvikler jobber en hel arbeidsuke i systemene bedriften allerede bruker, til fast pris og med et avtalt resultat. For små norske tjenestebedrifter.",
+      "INIT forbedrer arbeidsflyt, automatiserer rutinearbeid og kobler sammen systemene bedriften allerede bruker. Avgrensede oppdrag med avtalt pris og leveranse.",
   },
   nav: {
     work: "Eksempler",
     process: "Slik foregår det",
     pricing: "Priser",
     contact: "Kontakt",
-    cta: "Ta en prat",
+    cta: "Avtal en samtale",
   },
   hero: {
-    title: "En uke på innsiden. Fredag står noe i drift.",
+    title: "Praktiske forbedringer i systemene dere allerede bruker.",
     subtitle:
-      "En utvikler jobber en hel arbeidsuke i systemene dere allerede bruker, sammen med folkene som bruker dem. Prisen og datoen er avtalt på forhånd.",
-    ctaPrimary: "Fortell hva som tar tid",
+      "INIT kobler sammen verktøy, automatiserer rutinearbeid og bygger enkle interne løsninger. Ett avgrenset oppdrag om gangen, med avtalt pris og leveranse.",
+    ctaPrimary: "Avtal en innledende samtale",
   },
   principles: {
-    titleLead: "En uke av gangen.",
+    titleLead: "Tydelig avgrenset.",
     titleRest:
-      "Tjenesten er en hel arbeidsuke inne i bedriften, i systemene dere allerede har, med fast pris og et avtalt resultat.",
+      "Hvert oppdrag har én prioritert leveranse, en avtalt tidsramme og en pris dere kjenner før arbeidet starter.",
     items: [
       {
-        title: "Uken starter der jobben gjøres",
-        desc: "Den første dagen går med til å se hvordan dere faktisk jobber. Det som tar tid, viser seg i rutinene, sjelden i et kravdokument.",
+        title: "Arbeidet forstås først",
+        desc: "Vi går gjennom rutinen med dem som bruker den og avklarer hvor en forbedring vil ha størst verdi.",
       },
       {
-        title: "Alt bygges i systemene dere har",
-        desc: "Arbeidet skjer inne i verktøyene dere allerede betaler for. Regnskap, CRM, e-post, regneark og det som ellers står i veien.",
+        title: "Det eksisterende er utgangspunktet",
+        desc: "Løsningen bygges rundt verktøyene og dataene dere allerede har, så langt det er teknisk og økonomisk fornuftig.",
       },
       {
-        title: "Uken har fast pris",
-        desc: "Pris og dato er avtalt før uken starter. Fredag bestemmer dere selv om det blir en uke til.",
+        title: "Leveransen er konkret",
+        desc: "Omfang, pris og tidspunkt avtales på forhånd. Ved levering får dere gjennomgang og nødvendig dokumentasjon.",
       },
     ],
   },
   process: {
-    title: "Slik foregår en uke",
+    title: "Slik arbeider vi",
     subtitle:
-      "Du trenger ikke vite hva slags teknologi du trenger. Start med å fortelle hva som tar tid eller ikke fungerer.",
+      "Vi avklarer behovet før oppstart og følger arbeidet tett sammen med dem som skal bruke løsningen.",
     steps: [
       {
         number: "01",
-        title: "Kort prat",
-        desc: "Du forteller hva som tar tid. Sammen finner vi ut hvilken uke som passer, og hva uken skal ende med.",
+        title: "Avklaring",
+        desc: "Vi går gjennom dagens arbeidsflyt, ønsket resultat og eventuelle tekniske avhengigheter.",
       },
       {
         number: "02",
-        title: "Mandag hos dere",
-        desc: "Uken starter sammen med dem som gjør jobben. Vi går gjennom systemer og tilganger, og blir enige om hva som tas først.",
+        title: "Oppstart",
+        desc: "Tilganger og ansvar avklares. Leveransen brytes ned i konkrete steg med en tydelig prioritering.",
       },
       {
         number: "03",
-        title: "Bygging midt i driften",
-        desc: "Det som bygges, testes samme dag av dem som skal bruke det. Dere ser fremdriften hver ettermiddag.",
+        title: "Utvikling og testing",
+        desc: "Løsningen bygges og testes fortløpende. Tilbakemeldinger fra brukerne tas inn underveis.",
       },
       {
         number: "04",
-        title: "Fredag",
-        desc: "Det som virker, står i drift. Dere får en gjennomgang, enkel dokumentasjon og en ærlig anbefaling om en uke til er verdt det.",
+        title: "Levering",
+        desc: "Dere får en gjennomgang av løsningen, nødvendig dokumentasjon og en anbefaling for videre forvaltning.",
       },
     ],
   },
   projects: {
-    title: "Hva en uke kan brukes til",
+    title: "Typiske oppdrag",
     subtitle:
-      "Eksempler på arbeid som får plass i én uke, med tilbakemeldinger fra kundene det er levert til.",
-    titleEmpty: "Hva en uke kan brukes til",
+      "Eksempler på leveranser, med tilbakemeldinger fra virksomhetene de er utviklet for.",
+    titleEmpty: "Typiske oppdrag",
     subtitleEmpty:
-      "Eksempler på arbeid som får plass i én uke. Vi starter med det som koster mest tid akkurat nå.",
-    metricLabel: "Mål",
+      "Eksempler på avgrensede forbedringer i arbeidsflyt, data og interne systemer.",
+    metricLabel: "Resultat",
     items: [
       {
         id: "report",
@@ -204,32 +204,32 @@ const no: Dictionary = {
     ],
   },
   pricing: {
-    title: "Start med én uke",
+    title: "Priser",
     subtitle:
-      "Du får pris og dato før uken starter. Ingen bindingstid eller overraskende fakturaer.",
+      "Omfang, dato og pris avtales før oppstart. Videre arbeid bestilles separat.",
     tiers: [
       {
         id: "sprint",
-        name: "En uke på innsiden",
+        name: "Utviklingsuke",
         price: "Fra 24 000 kr",
         priceNote: "Fast pris per uke",
-        desc: "En hel arbeidsuke inne i bedriften, der det som koster mest tid akkurat nå blir tatt først.",
+        desc: "En avgrenset arbeidsuke for ett prioritert behov, fra avklaring til ferdig leveranse.",
         features: [
           "Fem arbeidsdager, hos dere eller på nett",
           "Daglig kontakt med dem som gjør jobben",
           "Bygging og testing i deres egne systemer",
           "Enkel dokumentasjon på norsk",
           "Gjennomgang og overlevering fredag",
-          "Ny uke avtales bare hvis den er verdt det",
+          "Eventuelt videre arbeid avtales separat",
         ],
-        cta: "Fortell hva som tar tid",
+        cta: "Avtal en samtale",
       },
       {
         id: "custom",
-        name: "Trygg drift",
+        name: "Drift og vedlikehold",
         price: "Fra 1 490 kr/mnd.",
         priceNote: "Valgfritt · ingen bindingstid",
-        desc: "For løsninger som trenger overvåking og teknisk oppfølging etter at uken er over.",
+        desc: "Løpende oppfølging for løsninger som trenger overvåking, vedlikehold og teknisk støtte.",
         features: [
           "Overvåking av løsningen",
           "Feilretting på det INIT har bygget",
@@ -237,29 +237,29 @@ const no: Dictionary = {
           "Svar innen tre arbeidsdager",
           "Videreutvikling avtales separat",
         ],
-        cta: "Spør om oppfølging",
+        cta: "Ta kontakt",
       },
     ],
   },
   faq: {
     title: "Spørsmål og svar",
-    subtitle: "Det viktigste å vite før den første uken.",
+    subtitle: "Praktisk informasjon om samarbeid, levering og eierskap.",
     items: [
       {
-        q: "Hva er en uke på innsiden?",
-        a: "En hel arbeidsuke der en utvikler jobber inne i bedriften, i systemene og rutinene dere allerede har. Arbeidsmåten kalles forward deployed engineering. Den finnes fordi de beste forbedringene sjelden lar seg beskrive i et møte. De viser seg når noen sitter der jobben gjøres.",
+        q: "Hva inngår i en utviklingsuke?",
+        a: "En utviklingsuke er et avgrenset oppdrag for ett prioritert behov. Uken omfatter avklaring, utvikling, testing, gjennomgang og nødvendig dokumentasjon.",
       },
       {
-        q: "Hva kan en uke brukes til?",
-        a: "Automatisering, integrasjoner, AI, rapportering, dataflyt og små interne verktøy. Du trenger ikke vite hvilken teknologi som passer. Beskriv hva som tar tid eller ikke fungerer.",
+        q: "Hva kan INIT hjelpe med?",
+        a: "Typiske oppdrag er automatisering, integrasjoner, rapportering, dataflyt, bruk av AI og mindre interne verktøy. Vi starter med behovet og vurderer teknologien deretter.",
       },
       {
         q: "Hvor mye rekker en uke?",
-        a: "Vanligvis én til tre konkrete forbedringer som står i drift fredag. Rekkefølgen avtales mandag, og dere ser fremdriften hver dag.",
+        a: "Omfanget avtales før oppstart. En uke passer vanligvis for én tydelig forbedring fra start til slutt, eller flere mindre endringer som hører naturlig sammen.",
       },
       {
-        q: "Må uken kjøres hos oss?",
-        a: "Nei. Uken kan kjøres hos dere, på nett eller delt mellom de to. De fleste velger én til to dager på kontoret i starten og resten på nett.",
+        q: "Må arbeidet gjøres hos oss?",
+        a: "Nei. Oppdraget kan gjennomføres hos dere, på nett eller som en kombinasjon. Formen avtales ut fra behovet og hvem som skal involveres.",
       },
       {
         q: "Må vi bytte systemene vi bruker?",
@@ -267,22 +267,22 @@ const no: Dictionary = {
       },
       {
         q: "Hvem jobber vi med?",
-        a: "INIT er et enkeltpersonsforetak. Dere jobber direkte med den samme personen hele uken. Derfor tas det bare inn én uke av gangen.",
+        a: "INIT er et enkeltpersonsforetak. Dere har én fast kontakt og jobber med samme person gjennom hele oppdraget.",
       },
       {
         q: "Hvem eier det som bygges?",
-        a: "Bedriften gjør det. Kontoer og tilganger settes så langt som mulig opp i bedriftens navn, og enkel dokumentasjon følger med fredag.",
+        a: "Bedriften gjør det. Kontoer og tilganger settes så langt som mulig opp i bedriftens navn, og nødvendig dokumentasjon følger leveransen.",
       },
       {
-        q: "Hva om en hel uke er for mye?",
-        a: "Noen problemer er små nok til å løses på en dag eller to. Da avtaler vi det i stedet, og dere får vite det før vi starter.",
+        q: "Hva om oppgaven er mindre enn en uke?",
+        a: "Mindre oppdrag kan avtales separat når behovet er tydelig avgrenset. Omfang og pris avklares før arbeidet starter.",
       },
     ],
   },
   booking: {
-    title: "Book en prat på 30 minutter",
+    title: "Avtal en innledende samtale",
     subtitle:
-      "Fortell hva som tar tid eller ikke fungerer. Sammen finner vi ut om en uke på innsiden er riktig sted å starte.",
+      "På 30 minutter går vi gjennom behovet og vurderer et passende omfang for et første oppdrag.",
     pick: "Velg dag",
     pickTime: "Velg tidspunkt",
     unavailable: "Ikke tilgjengelig",
@@ -297,28 +297,28 @@ const no: Dictionary = {
     back: "Tilbake til forsiden",
     heading: "Bekreft tidspunktet",
     intro:
-      "Beskriv kort hva som tar tid hos dere. Da er agendaen klar på forhånd.",
+      "Beskriv kort hva dere ønsker å forbedre, så kan samtalen forberedes på forhånd.",
     selectedLabel: "Valgt tidspunkt",
     noSlot: "Ingen tid valgt. Gå tilbake og velg et tidspunkt.",
     name: "Navn",
     company: "Bedrift",
     email: "E-post",
     phone: "Telefon (valgfritt)",
-    message: "Hva tar mest tid hos dere i dag?",
+    message: "Hva ønsker dere å forbedre?",
     messagePlaceholder:
       "For eksempel: Vi kopierer de samme kundeopplysningene mellom to systemer, eller bruker flere timer på en rapport hver uke.",
     submit: "Send bookingforespørsel",
     note: "Knappen åpner e-postprogrammet ditt med forespørselen ferdig utfylt. Du får en bekreftelse med møtelenke i retur.",
   },
   cta: {
-    titleLine1: "Hva tar unødvendig mye tid?",
-    titleLine2: "La oss ta én uke på det.",
-    primary: "Fortell om problemet",
+    titleLine1: "Start med en kort samtale.",
+    titleLine2: "Vi avklarer omfang, pris og tidspunkt.",
+    primary: "Send en forespørsel",
     secondary: "INIT på LinkedIn",
   },
   footer: {
     tagline:
-      "En uke på innsiden, for norske tjenestebedrifter. I systemene dere allerede bruker, til fast pris.",
+      "Utvikling og automatisering for norske virksomheter. Avgrensede oppdrag med avtalt pris og leveranse.",
     navTitle: "Sider",
     contactTitle: "Kontakt",
   },
@@ -328,75 +328,75 @@ const en: Dictionary = {
   meta: {
     title: "INIT Consulting",
     description:
-      "A week on the inside: a developer spends a full working week in the systems your business already uses, at a fixed price and with an agreed result. For small Norwegian service businesses.",
+      "INIT improves workflows, automates routine work and connects the systems your business already uses. Clearly scoped engagements with an agreed price and deliverable.",
   },
   nav: {
     work: "Examples",
     process: "How it works",
     pricing: "Pricing",
     contact: "Contact",
-    cta: "Have a chat",
+    cta: "Book a call",
   },
   hero: {
-    title: "A week on the inside. Something works by Friday.",
+    title: "Practical improvements to the systems you already use.",
     subtitle:
-      "A developer spends a full working week in the systems you already use, alongside the people who use them. The price and the date are agreed in advance.",
-    ctaPrimary: "Tell me what takes time",
+      "INIT connects tools, automates routine work and builds focused internal solutions. One clearly scoped engagement at a time, with an agreed price and deliverable.",
+    ctaPrimary: "Book an introductory call",
   },
   principles: {
-    titleLead: "One week at a time.",
+    titleLead: "Clearly scoped.",
     titleRest:
-      "The service is a full working week inside the business, in the systems you already have, at a fixed price and with an agreed result.",
+      "Each engagement has one priority, a defined timeframe and a price agreed before work begins.",
     items: [
       {
-        title: "The week starts where the work happens",
-        desc: "The first day goes on seeing how you actually work. What takes time shows up in the routines, rarely in a requirements document.",
+        title: "Understand the work first",
+        desc: "We review the workflow with the people who use it and identify where an improvement will have the most value.",
       },
       {
-        title: "Everything is built in the systems you have",
-        desc: "The work happens inside the tools you already pay for. Accounting, CRM, email, spreadsheets and whatever else is in the way.",
+        title: "Build on what is already there",
+        desc: "The solution is designed around your existing tools and data wherever that is technically and economically sensible.",
       },
       {
-        title: "The week has a fixed price",
-        desc: "The price and the date are agreed before the week starts. On Friday you decide whether there is another one.",
+        title: "Deliver something specific",
+        desc: "Scope, price and timing are agreed in advance. Delivery includes a walkthrough and the documentation you need.",
       },
     ],
   },
   process: {
-    title: "How a week runs",
+    title: "How we work",
     subtitle:
-      "You do not need to know what technology you need. Start by describing what takes time or does not work.",
+      "We define the need before starting and work closely with the people who will use the solution.",
     steps: [
       {
         number: "01",
-        title: "Short call",
-        desc: "You describe what takes time. Together we find the week that suits, and what it should end with.",
+        title: "Scoping",
+        desc: "We review the current workflow, the intended outcome and any technical dependencies.",
       },
       {
         number: "02",
-        title: "Monday with you",
-        desc: "The week starts alongside the people doing the work. We go through systems and access, and agree what gets taken first.",
+        title: "Start",
+        desc: "Access and responsibilities are confirmed. The deliverable is divided into concrete steps with a clear priority.",
       },
       {
         number: "03",
-        title: "Building inside the day job",
-        desc: "What is built is tested the same day by the people who will use it. You see progress every afternoon.",
+        title: "Development and testing",
+        desc: "The solution is developed and tested continuously, with feedback from users incorporated along the way.",
       },
       {
         number: "04",
-        title: "Friday",
-        desc: "What works is running. You get a walkthrough, simple documentation and an honest recommendation on whether another week is worth it.",
+        title: "Delivery",
+        desc: "You receive a walkthrough of the solution, the necessary documentation and a recommendation for ongoing ownership.",
       },
     ],
   },
   projects: {
-    title: "What a week can be used for",
+    title: "Typical engagements",
     subtitle:
-      "Examples of work that fits inside one week, with feedback from the companies it was delivered to.",
-    titleEmpty: "What a week can be used for",
+      "Examples of deliverables, with feedback from the businesses they were developed for.",
+    titleEmpty: "Typical engagements",
     subtitleEmpty:
-      "Examples of work that fits inside one week. We start with whatever costs the most time right now.",
-    metricLabel: "Goal",
+      "Examples of focused improvements to workflows, data and internal systems.",
+    metricLabel: "Outcome",
     items: [
       {
         id: "report",
@@ -437,32 +437,32 @@ const en: Dictionary = {
     ],
   },
   pricing: {
-    title: "Start with one week",
+    title: "Pricing",
     subtitle:
-      "You get the price and the date before the week starts. No lock-in or surprise invoices.",
+      "Scope, timing and price are agreed before work begins. Further work is commissioned separately.",
     tiers: [
       {
         id: "sprint",
-        name: "A week on the inside",
+        name: "Development week",
         price: "From 24,000 NOK",
         priceNote: "Fixed price per week",
-        desc: "A full working week inside the business, where whatever costs the most time right now is taken first.",
+        desc: "A focused working week for one priority, from initial scoping to a completed deliverable.",
         features: [
           "Five working days, on site or remote",
           "Daily contact with the people doing the work",
           "Building and testing in your own systems",
           "Simple written documentation",
           "Walkthrough and handover on Friday",
-          "Another week only if it is worth it",
+          "Any further work agreed separately",
         ],
-        cta: "Tell me what takes time",
+        cta: "Book a call",
       },
       {
         id: "custom",
-        name: "Reliable operation",
+        name: "Operations and maintenance",
         price: "From 1,490 NOK/month",
         priceNote: "Optional · no lock-in",
-        desc: "For solutions that need monitoring and technical follow-up once the week is over.",
+        desc: "Ongoing support for solutions that require monitoring, maintenance and technical follow-up.",
         features: [
           "Monitoring of the solution",
           "Bug fixes for what INIT built",
@@ -470,29 +470,29 @@ const en: Dictionary = {
           "A response within three business days",
           "Further development agreed separately",
         ],
-        cta: "Ask about follow-up",
+        cta: "Get in touch",
       },
     ],
   },
   faq: {
     title: "Questions and answers",
-    subtitle: "The main things to know before the first week.",
+    subtitle: "Practical information about the engagement, delivery and ownership.",
     items: [
       {
-        q: "What is a week on the inside?",
-        a: "A full working week where a developer works inside the business, in the systems and routines you already have. The way of working is called forward deployed engineering. It exists because the best improvements are rarely described in a meeting. They show up when someone sits where the work happens.",
+        q: "What is included in a development week?",
+        a: "A development week is a focused engagement for one priority. It includes scoping, development, testing, a walkthrough and the necessary documentation.",
       },
       {
-        q: "What can a week be used for?",
-        a: "Automation, integrations, AI, reporting, data flows and small internal tools. You do not need to know which technology fits. Describe what takes time or does not work.",
+        q: "What can INIT help with?",
+        a: "Typical engagements include automation, integrations, reporting, data flows, applied AI and small internal tools. We start with the need and assess the technology from there.",
       },
       {
         q: "How much fits into a week?",
-        a: "Usually one to three concrete improvements that are running by Friday. The order is agreed on Monday, and you see progress every day.",
+        a: "The scope is agreed before work begins. A week typically covers one clear improvement from start to finish, or several smaller changes that naturally belong together.",
       },
       {
-        q: "Does the week have to run at our offices?",
-        a: "No. The week can run at your offices, remotely or split between the two. Most choose one or two days in the office at the start and the rest remote.",
+        q: "Does the work have to happen at our offices?",
+        a: "No. The engagement can be completed on site, remotely or as a combination. The format depends on the need and who should be involved.",
       },
       {
         q: "Do we have to replace our current systems?",
@@ -500,22 +500,22 @@ const en: Dictionary = {
       },
       {
         q: "Who will we work with?",
-        a: "INIT is a sole proprietorship. You work directly with the same person all week. For that reason, only one week is taken on at a time.",
+        a: "INIT is a sole proprietorship. You have one point of contact and work with the same person throughout the engagement.",
       },
       {
         q: "Who owns what gets built?",
-        a: "Your company does. Accounts and access are set up in the company's name wherever possible, and simple documentation is included on Friday.",
+        a: "Your company does. Accounts and access are set up in the company's name wherever possible, and the necessary documentation is included with delivery.",
       },
       {
-        q: "What if a whole week is too much?",
-        a: "Some problems are small enough to solve in a day or two. Then we agree on that instead, and you will know before we begin.",
+        q: "What if the task is smaller than a week?",
+        a: "Smaller engagements can be agreed separately when the need is clearly defined. Scope and price are confirmed before work begins.",
       },
     ],
   },
   booking: {
-    title: "Book a 30-minute call",
+    title: "Book an introductory call",
     subtitle:
-      "Describe what takes time or does not work. Together we will decide whether a week on the inside is the right place to start.",
+      "In 30 minutes, we will review the need and assess a suitable scope for an initial engagement.",
     pick: "Pick a day",
     pickTime: "Pick a time",
     unavailable: "Unavailable",
@@ -530,28 +530,28 @@ const en: Dictionary = {
     back: "Back to the front page",
     heading: "Confirm the time",
     intro:
-      "Briefly describe what takes time at your company. That sets the agenda in advance.",
+      "Briefly describe what you would like to improve so the call can be prepared in advance.",
     selectedLabel: "Selected time",
     noSlot: "No time selected. Go back and pick one.",
     name: "Name",
     company: "Company",
     email: "Email",
     phone: "Phone (optional)",
-    message: "What takes the most time at your company today?",
+    message: "What would you like to improve?",
     messagePlaceholder:
       "For example: we copy the same customer details between two systems, or spend several hours on a report each week.",
     submit: "Send booking request",
     note: "The button opens your email client with the request filled in. You will get a confirmation with a meeting link in return.",
   },
   cta: {
-    titleLine1: "What takes more time than it should?",
-    titleLine2: "Let us put a week on it.",
-    primary: "Describe the problem",
+    titleLine1: "Start with a short conversation.",
+    titleLine2: "We define the scope, price and timing.",
+    primary: "Send an enquiry",
     secondary: "INIT on LinkedIn",
   },
   footer: {
     tagline:
-      "A week on the inside, for Norwegian service businesses. In the systems you already use, at a fixed price.",
+      "Development and automation for Norwegian businesses. Clearly scoped engagements with an agreed price and deliverable.",
     navTitle: "Pages",
     contactTitle: "Contact",
   },

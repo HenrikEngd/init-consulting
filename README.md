@@ -1,9 +1,8 @@
 # INIT
 
-Marketing site for INIT, a Norwegian sole proprietorship that removes one
-recurring manual task at a time for small service businesses: automation,
-integrations, AI and small internal tools, at a fixed price and with an agreed
-delivery date.
+Marketing site for INIT, a Norwegian sole proprietorship that improves
+workflows, automates routine work and connects existing business systems
+through clearly scoped engagements with an agreed price and deliverable.
 
 Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and Framer Motion.
 One page plus a booking page. The only server code is the availability route,

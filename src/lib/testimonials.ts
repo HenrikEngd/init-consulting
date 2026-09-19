@@ -59,74 +59,7 @@ export interface Testimonial {
  */
 const clientTestimonials: Testimonial[] = [];
 
-/**
- * Stand-ins, so the attribution line can be seen and judged before there is a
- * client to put on it.
- *
- * They never reach a production build: the export below hands them out only
- * while `NODE_ENV` is development, and they disappear the moment
- * `clientTestimonials` has a single real entry. `npm run build` ships the real
- * list, which today means the cards fall back to their outcome line.
- *
- * Nordmann is the Norwegian John Doe and every company here says Eksempel or
- * Demo, so if one of these is ever seen by someone it reads as a page that is
- * not finished rather than as a claim about work that was done.
- */
-const previewTestimonials: Testimonial[] = [
-  {
-    projectId: "report",
-    quote: {
-      no: "Mandagene gikk fra en halv arbeidsdag med regneark til en rapport som allerede ligger i innboksen.",
-    },
-    name: "Kari Nordmann",
-    company: "Eksempel AS",
-  },
-  {
-    projectId: "crm",
-    quote: {
-      no: "Ingen taster inn de samme opplysningene to ganger lenger, og vi finner igjen det vi leter etter.",
-    },
-    name: "Ola Nordmann",
-    company: "Demo Bygg AS",
-  },
-  {
-    projectId: "documents",
-    quote: {
-      no: "Fakturaene leses inn og kontrolleres av seg selv. Vi ser bare på de som faktisk trenger et blikk.",
-    },
-    name: "Marte Nordmann",
-    company: "Eksempel Handel AS",
-  },
-  {
-    projectId: "inbox",
-    quote: {
-      no: "Henvendelsene havner hos riktig person med en gang, uten at noen må sortere innboksen hver morgen.",
-    },
-    name: "Per Nordmann",
-    company: "Demo Regnskap AS",
-  },
-  {
-    projectId: "meetings",
-    quote: {
-      no: "Oppfølgingen etter møtene skjer nå av seg selv. Ingenting blir liggende igjen i notatblokka.",
-    },
-    name: "Ingrid Nordmann",
-    company: "Eksempel Logistikk AS",
-  },
-  {
-    projectId: "systems",
-    quote: {
-      no: "Systemene snakker endelig sammen. Det som før tok en ettermiddag i uka, tar nå ingen tid.",
-    },
-    name: "Jonas Nordmann",
-    company: "Demo Teknikk AS",
-  },
-];
-
-export const testimonials: Testimonial[] =
-  clientTestimonials.length === 0 && process.env.NODE_ENV === "development"
-    ? previewTestimonials
-    : clientTestimonials;
+export const testimonials: Testimonial[] = clientTestimonials;
 
 export function testimonialFor(projectId: string): Testimonial | undefined {
   return testimonials.find((t) => t.projectId === projectId);

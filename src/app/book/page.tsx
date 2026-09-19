@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/sections/BookingForm";
 
 export const metadata: Metadata = {
   title: "Book en samtale",
-  description: "Bekreft tidspunkt for en uforpliktende prat om en uke på innsiden.",
+  description: "Velg tidspunkt for en innledende samtale om behov, omfang og mulige neste steg.",
 };
 
 export default function BookPage() {
