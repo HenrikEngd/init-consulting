@@ -6,6 +6,7 @@ export interface Dictionary {
     work: string;
     process: string;
     pricing: string;
+    about: string;
     contact: string;
     cta: string;
   };
@@ -82,6 +83,21 @@ export interface Dictionary {
     submit: string;
     note: string;
   };
+  /**
+   * The about page. The one-pager says what the work is; this says who the
+   * reader will be dealing with, which is the question a sole proprietorship
+   * has to answer before anything else.
+   */
+  about: {
+    back: string;
+    heading: string;
+    /** One sentence, set brighter than the body, as on the front page. */
+    lead: string;
+    /** Body paragraphs, in order. */
+    body: string[];
+    contactTitle: string;
+    contactBook: string;
+  };
   cta: {
     titleLine1: string;
     titleLine2: string;
@@ -101,6 +117,7 @@ const no: Dictionary = {
     work: "Eksempler",
     process: "Slik foregår det",
     pricing: "Priser",
+    about: "Om",
     contact: "Kontakt",
     cta: "Avtal en samtale",
   },
@@ -266,12 +283,8 @@ const no: Dictionary = {
         a: "Vanligvis ikke. Målet er å få mer ut av verktøyene dere allerede har, enten ved å koble dem sammen eller forenkle arbeidet rundt dem.",
       },
       {
-        q: "Hvem jobber vi med?",
-        a: "INIT er et enkeltpersonsforetak. Dere har én fast kontakt og jobber med samme person gjennom hele oppdraget.",
-      },
-      {
         q: "Hvem eier det som bygges?",
-        a: "Bedriften gjør det. Kontoer og tilganger settes så langt som mulig opp i bedriftens navn, og nødvendig dokumentasjon følger leveransen.",
+        a: "Det gjør dere. Kontoer og tilganger settes så langt som mulig opp i deres navn, og nødvendig dokumentasjon følger leveransen.",
       },
       {
         q: "Hva om behovet er større enn ett oppdrag?",
@@ -310,6 +323,18 @@ const no: Dictionary = {
     submit: "Send bookingforespørsel",
     note: "Knappen åpner e-postprogrammet ditt med forespørselen ferdig utfylt. Du får en bekreftelse med møtelenke i retur.",
   },
+  about: {
+    back: "Tilbake til forsiden",
+    heading: "Om meg",
+    lead: "INIT er et enkeltpersonsforetak. Det er meg, Henrik Engdal, du snakker med i den første samtalen, og det er meg som bygger og leverer.",
+    body: [
+      "Jeg jobber alene og tar få oppdrag av gangen. Dere har én kontakt gjennom hele leveransen, fra avklaring til overlevering, og slipper å forklare det samme på nytt til nye folk.",
+      "Arbeidet starter med å forstå rutinen før noe bygges. Jeg går gjennom hvordan jobben gjøres i dag, sammen med dem som gjør den, og bygger videre på verktøyene og dataene dere allerede har.",
+      "Bakgrunnen min er teknisk. Jeg bygger løsningene selv, og jeg sier fra når en forbedring ikke er verdt det den koster.",
+    ],
+    contactTitle: "Ta kontakt",
+    contactBook: "Book en innledende samtale",
+  },
   cta: {
     titleLine1: "Start med en kort samtale.",
     titleLine2: "Vi avklarer omfang, pris og tidspunkt.",
@@ -334,6 +359,7 @@ const en: Dictionary = {
     work: "Examples",
     process: "How it works",
     pricing: "Pricing",
+    about: "About",
     contact: "Contact",
     cta: "Book a call",
   },
@@ -499,12 +525,8 @@ const en: Dictionary = {
         a: "Usually not. The aim is to get more from the tools you already have, either by connecting them or simplifying the work around them.",
       },
       {
-        q: "Who will we work with?",
-        a: "INIT is a sole proprietorship. You have one point of contact and work with the same person throughout the engagement.",
-      },
-      {
         q: "Who owns what gets built?",
-        a: "Your company does. Accounts and access are set up in the company's name wherever possible, and the necessary documentation is included with delivery.",
+        a: "You do. Accounts and access are set up in your name wherever possible, and the necessary documentation is included with delivery.",
       },
       {
         q: "What if the need is larger than one engagement?",
@@ -542,6 +564,18 @@ const en: Dictionary = {
       "For example: we copy the same customer details between two systems, or spend several hours on a report each week.",
     submit: "Send booking request",
     note: "The button opens your email client with the request filled in. You will get a confirmation with a meeting link in return.",
+  },
+  about: {
+    back: "Back to the front page",
+    heading: "About me",
+    lead: "INIT is a sole proprietorship. I am Henrik Engdal, the person you speak to in the first conversation and the person who builds and delivers.",
+    body: [
+      "I work alone and take on few engagements at a time. You have one point of contact from scoping through to handover, and never have to explain the same thing again to someone new.",
+      "The work starts by understanding the routine before anything is built. I go through how the job is done today, together with the people who do it, and build on the tools and the data you already have.",
+      "My background is technical. I build the solutions myself, and I say so when an improvement is not worth what it costs.",
+    ],
+    contactTitle: "Get in touch",
+    contactBook: "Book an initial call",
   },
   cta: {
     titleLine1: "Start with a short conversation.",

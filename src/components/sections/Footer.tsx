@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context";
 import { siteConfig } from "@/lib/site-config";
-import { navAnchors } from "@/lib/nav";
+import { navItems } from "@/lib/nav";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { LogoMark } from "@/components/ui/LogoMark";
 
@@ -33,9 +33,9 @@ export function Footer() {
               {t.footer.navTitle}
             </h3>
             <ul className="mt-4 flex flex-col gap-3">
-              {navAnchors.map(({ key, id }) => (
+              {navItems.map(({ key, href }) => (
                 <li key={key}>
-                  <a href={`#${id}`} className={linkClass}>
+                  <a href={href} className={linkClass}>
                     {t.nav[key]}
                   </a>
                 </li>

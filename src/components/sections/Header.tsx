@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { siteConfig } from "@/lib/site-config";
-import { navAnchors } from "@/lib/nav";
+import { navItems, navSectionIds } from "@/lib/nav";
 import { LogoMark } from "@/components/ui/LogoMark";
 
 function useActiveSection(ids: string[]) {
@@ -36,7 +36,7 @@ function useActiveSection(ids: string[]) {
 export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const active = useActiveSection(navAnchors.map((n) => n.id));
+  const active = useActiveSection(navSectionIds);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-xl">
@@ -52,10 +52,10 @@ export function Header() {
         {/* Nav, language and CTA form one right-aligned group. */}
         <div className="flex items-center gap-5">
           <nav className="hidden items-center gap-7 md:flex">
-            {navAnchors.map(({ key, id }) => (
+            {navItems.map(({ key, href, id }) => (
               <a
                 key={key}
-                href={`#${id}`}
+                href={href}
                 className={`text-[13px] font-[510] tracking-[-0.011em] transition-colors duration-150 ${
                   active === id
                     ? "text-primary"
@@ -130,10 +130,10 @@ export function Header() {
             className="overflow-hidden border-t border-hairline bg-background md:hidden"
           >
             <nav className="flex flex-col px-5 py-2 sm:px-8">
-              {navAnchors.map(({ key, id }) => (
+              {navItems.map(({ key, href }) => (
                 <a
                   key={key}
-                  href={`#${id}`}
+                  href={href}
                   onClick={() => setMobileOpen(false)}
                   className="border-b border-line-faint py-3.5 text-[14px] font-[510] text-secondary last:border-b-0"
                 >

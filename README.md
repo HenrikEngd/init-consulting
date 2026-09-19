@@ -5,9 +5,9 @@ workflows, automates routine work and connects existing business systems
 through clearly scoped engagements with an agreed price and deliverable.
 
 Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and Framer Motion.
-One page plus a booking page. The only server code is the availability route,
-which reads free slots from a Google calendar when credentials are configured
-and falls back to opening hours when they are not.
+One page plus a booking page and an about page. The only server code is the
+availability route, which reads free slots from a Google calendar when
+credentials are configured and falls back to opening hours when they are not.
 
 ## Design
 
