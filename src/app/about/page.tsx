@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import { About } from "@/components/sections/About";
+import { Header } from "@/components/sections/Header";
 
 export const metadata: Metadata = {
-  title: "Om meg",
+  title: "Henrik Engdal",
   description:
-    "INIT er et enkeltpersonsforetak. Hvem du jobber med, hvordan arbeidet foregår og hvordan du får tak i meg.",
+    "Henrik Engdal arbeider med digitale produkter, programvareutvikling, data og AI, automatisering og integrasjoner, med erfaring fra rådgivning, onboarding, support og testing.",
 };
 
 export default function AboutPage() {
-  return <About />;
+  return (
+    <>
+      <Header />
+      <About />
+    </>
+  );
 }

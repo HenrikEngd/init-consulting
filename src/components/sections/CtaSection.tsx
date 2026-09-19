@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 
 /**
  * Closing statement. Centred, no supporting paragraph — the headline and
- * the two buttons carry the whole section, as on the reference site.
+ * single contact action carry the whole section.
  */
 export function CtaSection() {
   const { lang, t } = useLanguage();
@@ -27,20 +27,12 @@ export function CtaSection() {
             {t.cta.titleLine2}
           </h2>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-10 flex justify-center">
             <a
               href={mailtoHref}
               className="inline-flex h-10 items-center justify-center rounded-[10px] bg-primary px-5 text-[14px] font-[510] tracking-[-0.011em] text-background transition-opacity duration-150 hover:opacity-90"
             >
               {t.cta.primary}
-            </a>
-            <a
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-10 items-center justify-center rounded-[10px] bg-level-3 px-5 text-[14px] font-[510] tracking-[-0.011em] text-primary transition-colors duration-150 hover:bg-[#232529]"
-            >
-              {t.cta.secondary}
             </a>
           </div>
         </FadeIn>

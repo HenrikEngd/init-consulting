@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "INIT",
-  email: "henrik@initconsulting.no",
+  email: "post@initconsulting.no",
   linkedin: "https://www.linkedin.com/company/110150651/",
   /**
    * The portrait on the about page, as a path inside `public/`.

@@ -111,7 +111,6 @@ export interface Dictionary {
     titleLine1: string;
     titleLine2: string;
     primary: string;
-    secondary: string;
   };
   footer: { tagline: string; navTitle: string; contactTitle: string };
 }
@@ -334,13 +333,12 @@ const no: Dictionary = {
   },
   about: {
     back: "Tilbake til forsiden",
-    heading: "Om meg",
-    portraitAlt: "Henrik Engdal",
-    lead: "INIT er et enkeltpersonsforetak. Det er meg, Henrik Engdal, du snakker med i den første samtalen, og det er meg som bygger og leverer.",
+    heading: "Hei, jeg er Henrik!",
+    portraitAlt: "Portrett av Henrik Engdal",
+    lead: "Jeg jobber med digitale produkter og interne systemer, tett på både teknologien og menneskene som skal bruke dem.",
     body: [
-      "Jeg jobber alene og tar få oppdrag av gangen. Dere har én kontakt gjennom hele leveransen, fra avklaring til overlevering, og slipper å forklare det samme på nytt til nye folk.",
-      "Arbeidet starter med å forstå rutinen før noe bygges. Jeg går gjennom hvordan jobben gjøres i dag, sammen med dem som gjør den, og bygger videre på verktøyene og dataene dere allerede har.",
-      "Bakgrunnen min er teknisk. Jeg bygger løsningene selv, og jeg sier fra når en forbedring ikke er verdt det den koster.",
+      "Erfaringen min spenner fra teknologirådgivning, bank og helseteknologi til kundesupport, onboarding av programvare og kvalitetssikring av regnskapssystemer. Det har gitt meg innsikt i hele løpet rundt en løsning: fra behov og utvikling til innføring, daglig bruk og videre oppfølging.",
+      "Jeg trives best med å forstå en arbeidsprosess, finne hvor systemer og data skaper unødvendig friksjon, og bygge en løsning som passer måten folk jobber på. Fagområdene mine er programvareutvikling, data og AI, automatisering og integrasjoner.",
     ],
     experienceTitle: "Bakgrunn",
     experience: [],
@@ -351,7 +349,6 @@ const no: Dictionary = {
     titleLine1: "Start med en kort samtale.",
     titleLine2: "Vi avklarer omfang, pris og tidspunkt.",
     primary: "Send en forespørsel",
-    secondary: "INIT på LinkedIn",
   },
   footer: {
     tagline:
@@ -579,13 +576,12 @@ const en: Dictionary = {
   },
   about: {
     back: "Back to the front page",
-    heading: "About me",
-    portraitAlt: "Henrik Engdal",
-    lead: "INIT is a sole proprietorship. I am Henrik Engdal, the person you speak to in the first conversation and the person who builds and delivers.",
+    heading: "Hi, I’m Henrik!",
+    portraitAlt: "Portrait of Henrik Engdal",
+    lead: "I work on digital products and internal systems, close to both the technology and the people who use them.",
     body: [
-      "I work alone and take on few engagements at a time. You have one point of contact from scoping through to handover, and never have to explain the same thing again to someone new.",
-      "The work starts by understanding the routine before anything is built. I go through how the job is done today, together with the people who do it, and build on the tools and the data you already have.",
-      "My background is technical. I build the solutions myself, and I say so when an improvement is not worth what it costs.",
+      "My experience spans technology consulting, financial services and health tech, as well as customer support, software onboarding and quality assurance for accounting systems. This has given me insight into the full lifecycle of a solution: from needs and development to implementation, day-to-day use and ongoing support.",
+      "I do my best work when I can understand a workflow, find where systems and data create unnecessary friction, and build a solution that fits how people work. My core areas are software development, data and AI, automation and integrations.",
     ],
     experienceTitle: "Background",
     experience: [],
@@ -596,7 +592,6 @@ const en: Dictionary = {
     titleLine1: "Start with a short conversation.",
     titleLine2: "We define the scope, price and timing.",
     primary: "Send an enquiry",
-    secondary: "INIT on LinkedIn",
   },
   footer: {
     tagline:

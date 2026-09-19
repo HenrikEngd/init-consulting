@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/language-context";
 import { siteConfig } from "@/lib/site-config";
 import { navItems, navSectionIds } from "@/lib/nav";
@@ -37,12 +38,16 @@ export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const active = useActiveSection(navSectionIds);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const fromCurrentPage = (href: string) =>
+    href.startsWith("#") && !onHome ? `/${href}` : href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1340px] items-center justify-between px-5 sm:px-8">
         <a
-          href="#top"
+          href={onHome ? "#top" : "/"}
           className="flex items-center gap-2.5 text-[15px] font-[560] tracking-[-0.011em] text-primary"
         >
           <LogoMark filled className="h-[17px] w-auto" />
@@ -52,19 +57,22 @@ export function Header() {
         {/* Nav, language and CTA form one right-aligned group. */}
         <div className="flex items-center gap-5">
           <nav className="hidden items-center gap-7 md:flex">
-            {navItems.map(({ key, href, id }) => (
+            {navItems.map(({ key, href, id }) => {
+              const current = id ? active === id : pathname === href;
+              return (
               <a
                 key={key}
-                href={href}
+                href={fromCurrentPage(href)}
                 className={`text-[13px] font-[510] tracking-[-0.011em] transition-colors duration-150 ${
-                  active === id
+                  current
                     ? "text-primary"
                     : "text-tertiary hover:text-primary"
                 }`}
               >
                 {t.nav[key]}
               </a>
-            ))}
+              );
+            })}
           </nav>
 
           <span className="hidden h-4 w-px bg-line md:block" />
@@ -81,7 +89,7 @@ export function Header() {
           </button>
 
           <a
-            href="#book"
+            href={onHome ? "#book" : "/#book"}
             className="hidden rounded-[10px] bg-primary px-3.5 py-[7px] text-[13px] font-[510] tracking-[-0.011em] text-background transition-opacity duration-150 hover:opacity-90 sm:inline-flex"
           >
             {t.nav.cta}
@@ -133,7 +141,7 @@ export function Header() {
               {navItems.map(({ key, href }) => (
                 <a
                   key={key}
-                  href={href}
+                  href={fromCurrentPage(href)}
                   onClick={() => setMobileOpen(false)}
                   className="border-b border-line-faint py-3.5 text-[14px] font-[510] text-secondary last:border-b-0"
                 >
@@ -141,7 +149,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="#book"
+                href={onHome ? "#book" : "/#book"}
                 onClick={() => setMobileOpen(false)}
                 className="my-3 rounded-[10px] bg-primary px-4 py-2.5 text-center text-[13px] font-[510] text-background"
               >

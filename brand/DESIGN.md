@@ -146,10 +146,12 @@ and `src/lib/platform.ts`.
 
 **One photograph is allowed, and only one**: the portrait on the about page.
 A reader deciding whether to let a stranger into their systems is owed a
-face, so that image is information and not decoration. It is 132px square
-with a 14px radius and a hairline border, and it is the only photograph
-anywhere on the site. Until a file is set in `siteConfig.portrait` the mark
-holds the block, so the page keeps its shape without a path that 404s.
+face, so that image is information and not decoration. It has a 14px radius
+and a hairline border, and it is the only photograph anywhere on the site. On
+wider screens it sits in a 240–280px left column beside the biography; on
+phones it stacks above the text. Until a file is set in `siteConfig.portrait`
+the mark holds the block, so the page keeps its shape without a path that
+404s.
 
 **The grid.** A 2:1 rhombus: a horizontal step of 2 units matches a vertical
 step of 1. Two axes, `u` running down-right and `v` down-left; a point at grid
