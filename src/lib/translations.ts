@@ -38,6 +38,7 @@ export interface Dictionary {
   pricing: {
     title: string;
     subtitle: string;
+    details: string;
     tiers: {
       id: string;
       name: string;
@@ -58,6 +59,7 @@ export interface Dictionary {
     loading: string;
     prevMonth: string;
     nextMonth: string;
+    continue: string;
     /** Shown when busy time has been subtracted from a connected calendar. */
     sourceCalendar: string;
     /** Shown when only the opening-hours rules have been applied. */
@@ -237,6 +239,7 @@ const no: Dictionary = {
     title: "Priser",
     subtitle:
       "Omfang og tidsramme varierer med behovet. Pris og leveringsdato avtales før oppstart.",
+    details: "Se resten av innholdet",
     tiers: [
       {
         id: "sprint",
@@ -316,6 +319,7 @@ const no: Dictionary = {
     loading: "Henter ledige tider",
     prevMonth: "Forrige måned",
     nextMonth: "Neste måned",
+    continue: "Fortsett",
     sourceCalendar: "Ledige tider hentet fra kalenderen.",
     sourceHours: "Standard åpningstider. Tidspunktet bekreftes på e-post.",
   },
@@ -488,6 +492,7 @@ const en: Dictionary = {
     title: "Pricing",
     subtitle:
       "Scope and timeframe vary with the need. The price and the delivery date are agreed before work begins.",
+    details: "See everything included",
     tiers: [
       {
         id: "sprint",
@@ -567,6 +572,7 @@ const en: Dictionary = {
     loading: "Loading available times",
     prevMonth: "Previous month",
     nextMonth: "Next month",
+    continue: "Continue",
     sourceCalendar: "Times taken from the live calendar.",
     sourceHours: "Standard opening hours. The time is confirmed by email.",
   },

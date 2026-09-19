@@ -62,7 +62,7 @@ export function PrinciplesSection() {
 
                 {Figure ? (
                   <Figure
-                    className="mt-6 h-[210px] w-full max-w-[320px] sm:mt-8"
+                    className="mx-auto mt-6 h-[210px] w-full max-w-[320px] sm:mt-8 lg:mx-0"
                     delay={sideBySide ? i * FIGURE_OFFSET : 0}
                   />
                 ) : null}

@@ -50,6 +50,7 @@ export function BookingCalendar() {
   const [data, setData] = useState<Availability | null>(null);
   const [failed, setFailed] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const [selectedTime, setSelectedTime] = useState("");
   const [month, setMonth] = useState<{ year: number; month: number } | null>(
     null,
   );
@@ -87,6 +88,10 @@ export function BookingCalendar() {
   );
 
   const slots = selected ? (byDate.get(selected) ?? []) : [];
+  const availableSlots = slots.filter((slot) => slot.available);
+  const chosenTime = availableSlots.some((slot) => slot.time === selectedTime)
+    ? selectedTime
+    : (availableSlots[0]?.time ?? "");
 
   // Months are only reachable while they hold at least one bookable day.
   const bounds = useMemo(() => {
@@ -142,7 +147,7 @@ export function BookingCalendar() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[364px_minmax(0,1fr)]">
       {/* Month grid */}
-      <div className="border-b border-line-soft px-5 py-5 sm:px-6 lg:border-r lg:border-b-0">
+      <div className="border-b border-line-soft px-4 py-4 sm:px-6 sm:py-5 lg:border-r lg:border-b-0">
         <div className="flex items-center justify-between">
           <p className="text-[14px] font-[510] tracking-[-0.011em] text-primary first-letter:uppercase">
             {monthLabel}
@@ -195,7 +200,7 @@ export function BookingCalendar() {
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-7 gap-1">
+        <div className="mt-3 grid grid-cols-7 gap-1 sm:mt-4">
           {weekdayInitials(lang).map((day) => (
             <span
               key={day}
@@ -219,7 +224,7 @@ export function BookingCalendar() {
                 disabled={!open}
                 onClick={() => setSelected(key)}
                 aria-pressed={isSelected}
-                className={`flex h-11 items-center justify-center rounded-[8px] text-[13px] tracking-[-0.011em] transition-colors duration-150 ${
+                className={`flex h-9 items-center justify-center rounded-[8px] text-[13px] tracking-[-0.011em] transition-colors duration-150 sm:h-11 ${
                   isSelected
                     ? "bg-primary font-[510] text-background"
                     : open
@@ -233,7 +238,7 @@ export function BookingCalendar() {
           })}
         </div>
 
-        <p className="mt-4 text-[12px] leading-[1.5] tracking-[-0.011em] text-tertiary/70">
+        <p className="mt-3 text-[12px] leading-[1.5] tracking-[-0.011em] text-tertiary/70 sm:mt-4">
           {data.source === "calendar"
             ? t.booking.sourceCalendar
             : t.booking.sourceHours}
@@ -241,7 +246,7 @@ export function BookingCalendar() {
       </div>
 
       {/* Times for the selected day */}
-      <div className="flex flex-col px-5 py-5 sm:px-6">
+      <div className="flex flex-col px-4 py-4 sm:px-6 sm:py-5">
         <div className="flex items-baseline justify-between gap-3">
           <p className="text-[12px] tracking-[0.08em] text-tertiary uppercase">
             {t.booking.pickTime}
@@ -254,27 +259,76 @@ export function BookingCalendar() {
         </div>
 
         {slots.length > 0 ? (
-          <div className="mt-4 grid flex-1 grid-cols-3 content-center gap-2 sm:grid-cols-4">
-            {slots.map((slot) =>
-              slot.available ? (
+          <>
+            {/* A compact native picker keeps the booking card short and easy
+                to scan on a phone. The complete grid remains on larger screens. */}
+            <div className="mt-3 sm:hidden">
+              <div className="relative">
+                <select
+                  value={chosenTime}
+                  onChange={(event) => setSelectedTime(event.target.value)}
+                  disabled={availableSlots.length === 0}
+                  aria-label={t.booking.pickTime}
+                  className="h-11 w-full appearance-none rounded-[10px] border border-line bg-level-2 px-3.5 pr-10 text-[14px] font-[510] tracking-[-0.011em] text-primary outline-none focus:border-tertiary disabled:text-tertiary"
+                >
+                  {availableSlots.length > 0 ? (
+                    availableSlots.map((slot) => (
+                      <option key={slot.time} value={slot.time}>
+                        {slot.time}
+                      </option>
+                    ))
+                  ) : (
+                    <option>{t.booking.noTimes}</option>
+                  )}
+                </select>
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden
+                  className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-tertiary"
+                >
+                  <path
+                    d="m6 8 4 4 4-4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              {selected && chosenTime ? (
                 <Link
-                  key={slot.time}
-                  href={`/book?slot=${selected}T${slot.time}`}
-                  className="flex h-11 items-center justify-center rounded-[10px] border border-line text-[14px] font-[510] tracking-[-0.011em] text-primary transition-colors duration-150 hover:border-transparent hover:bg-primary hover:text-background"
+                  href={`/book?slot=${selected}T${chosenTime}`}
+                  className="mt-2.5 flex h-11 w-full items-center justify-center rounded-[10px] bg-primary text-[14px] font-[510] tracking-[-0.011em] text-background transition-opacity duration-150 hover:opacity-90"
                 >
-                  {slot.time}
+                  {t.booking.continue}
                 </Link>
-              ) : (
-                <span
-                  key={slot.time}
-                  aria-label={`${slot.time}, ${t.booking.unavailable}`}
-                  className="flex h-11 cursor-not-allowed items-center justify-center rounded-[10px] border border-line-soft text-[14px] font-[510] tracking-[-0.011em] text-tertiary/30 line-through decoration-tertiary/40"
-                >
-                  {slot.time}
-                </span>
-              ),
-            )}
-          </div>
+              ) : null}
+            </div>
+
+            <div className="mt-4 hidden flex-1 grid-cols-4 content-center gap-2 sm:grid">
+              {slots.map((slot) =>
+                slot.available ? (
+                  <Link
+                    key={slot.time}
+                    href={`/book?slot=${selected}T${slot.time}`}
+                    className="flex h-11 items-center justify-center rounded-[10px] border border-line text-[14px] font-[510] tracking-[-0.011em] text-primary transition-colors duration-150 hover:border-transparent hover:bg-primary hover:text-background"
+                  >
+                    {slot.time}
+                  </Link>
+                ) : (
+                  <span
+                    key={slot.time}
+                    aria-label={`${slot.time}, ${t.booking.unavailable}`}
+                    className="flex h-11 cursor-not-allowed items-center justify-center rounded-[10px] border border-line-soft text-[14px] font-[510] tracking-[-0.011em] text-tertiary/30 line-through decoration-tertiary/40"
+                  >
+                    {slot.time}
+                  </span>
+                ),
+              )}
+            </div>
+          </>
         ) : (
           <p className="mt-3 text-[13px] leading-[1.6] tracking-[-0.011em] text-tertiary">
             {t.booking.noTimes}

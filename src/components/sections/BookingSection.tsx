@@ -10,10 +10,10 @@ export function BookingSection() {
 
   return (
     <section id="book" className="scroll-mt-20 border-t border-hairline">
-      <div className="mx-auto max-w-[1340px] px-5 py-24 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-[1340px] px-5 py-20 sm:px-8 sm:py-28">
         <SectionHeading title={t.booking.title} subtitle={t.booking.subtitle} />
 
-        <FadeIn delay={0.1} className="mt-14">
+        <FadeIn delay={0.1} className="mt-10 sm:mt-14">
           {/* Narrower than the content column: a calendar reads as an object,
               not as a band across the page. */}
           <div className="shine-card mx-auto max-w-[960px] overflow-hidden rounded-[14px]">
