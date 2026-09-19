@@ -5,10 +5,11 @@ that has to sit beside it: a page, a slide, a banner, an email. It records the
 decisions and the reasons, so a new piece can be made in the same hand rather
 than by copying one existing piece.
 
-INIT is a one-person consultancy that removes one recurring manual task at a
-time for small Norwegian service businesses, at a fixed price and with an
-agreed delivery date. Everything below follows from that: sparse, exact,
-nothing decorative, nothing that promises more than one problem at a time.
+INIT is a one-person consultancy that works as a forward deployed engineer for
+small Norwegian service businesses: a developer who sits inside the business,
+in the systems it already uses, for an agreed week at a fixed price.
+Everything below follows from that: sparse, exact, nothing decorative, nothing
+that promises more than one week at a time.
 
 ## 1. Canvas and colour
 
@@ -220,12 +221,16 @@ Motion is used to show things arriving and responding, never to decorate.
 
 - **Norwegian (bokmål) is the default**; English is a toggle. Write the
   Norwegian first and translate, not the other way round.
-- **Positioning phrases** to keep verbatim: "Mindre manuelt arbeid. Enklere
-  systemer.", "Ett konkret problem av gangen", "Fortell hva som tar tid",
-  "Trygg drift", "Første forbedring", "Problemet først."
+- **Positioning phrases** to keep verbatim: "Forward deployed engineer. På
+  innsiden hos dere.", "På innsiden.", "En uke av gangen", "En uke på
+  innsiden", "Fortell hva som tar tid", "Trygg drift".
+- **The English term is used once, then explained.** "Forward deployed
+  engineer" appears in the hero, the FAQ's first question and the footer, and
+  every sentence around it is plain Norwegian. A reader who has never met the
+  term should understand the offer from the sentence that follows it.
 - Sentences are short and concrete: what takes time, what changes, what it
-  costs, when it is delivered. Numbers are given plainly (12 500 kr, 14 dager,
-  tre til fem uker).
+  costs, when it is delivered. Numbers are given plainly (24 000 kr, fem
+  arbeidsdager, 1 490 kr/mnd).
 - **Never**: em dashes as a pivot, "not X but Y" constructions, "from X to Y"
   titles, paired adjectives as titles ("simple and straightforward"), trailing
   "making ... clear" clauses, "seamless", "unlock", "empower", "leverage",
