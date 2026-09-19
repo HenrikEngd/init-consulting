@@ -81,6 +81,11 @@ export interface Dictionary {
     message: string;
     messagePlaceholder: string;
     submit: string;
+    submitting: string;
+    successTitle: string;
+    successBody: string;
+    takenError: string;
+    genericError: string;
     note: string;
   };
   /**
@@ -328,8 +333,16 @@ const no: Dictionary = {
     message: "Hva ønsker dere å forbedre?",
     messagePlaceholder:
       "For eksempel: Vi kopierer de samme kundeopplysningene mellom to systemer, eller bruker flere timer på en rapport hver uke.",
-    submit: "Send bookingforespørsel",
-    note: "Knappen åpner e-postprogrammet ditt med forespørselen ferdig utfylt. Du får en bekreftelse med møtelenke i retur.",
+    submit: "Bekreft booking",
+    submitting: "Booker tidspunktet …",
+    successTitle: "Samtalen er booket",
+    successBody:
+      "Tidspunktet er lagt inn i kalenderen. Du får en kalenderinvitasjon med møtelenke på e-post.",
+    takenError:
+      "Dette tidspunktet ble nettopp tatt. Gå tilbake og velg en annen ledig tid.",
+    genericError:
+      "Bookingen kunne ikke fullføres akkurat nå. Prøv igjen, eller send en e-post til post@initconsulting.no.",
+    note: "Når du bekrefter, legges samtalen direkte i kalenderen og du får en invitasjon på e-post.",
   },
   about: {
     back: "Tilbake til forsiden",
@@ -571,8 +584,16 @@ const en: Dictionary = {
     message: "What would you like to improve?",
     messagePlaceholder:
       "For example: we copy the same customer details between two systems, or spend several hours on a report each week.",
-    submit: "Send booking request",
-    note: "The button opens your email client with the request filled in. You will get a confirmation with a meeting link in return.",
+    submit: "Confirm booking",
+    submitting: "Booking the time …",
+    successTitle: "Your call is booked",
+    successBody:
+      "The time has been added to the calendar. You will receive a calendar invitation with the meeting link by email.",
+    takenError:
+      "This time was just taken. Go back and choose another available time.",
+    genericError:
+      "The booking could not be completed right now. Try again, or email post@initconsulting.no.",
+    note: "When you confirm, the call is added directly to the calendar and an invitation is sent by email.",
   },
   about: {
     back: "Back to the front page",

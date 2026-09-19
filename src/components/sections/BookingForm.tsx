@@ -25,26 +25,43 @@ export function BookingForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "taken" | "error"
+  >("idle");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject =
-      lang === "no"
-        ? `Booking: ${label ?? "tidspunkt ikke valgt"}`
-        : `Booking: ${label ?? "no time selected"}`;
-    const lines = [
-      `${t.bookingPage.selectedLabel}: ${label ?? "-"}`,
-      `${t.bookingPage.name}: ${name}`,
-      `${t.bookingPage.company}: ${company}`,
-      `${t.bookingPage.email}: ${email}`,
-      `${t.bookingPage.phone}: ${phone || "-"}`,
-      "",
-      `${t.bookingPage.message}`,
-      message,
-    ];
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(lines.join("\n"))}`;
+    if (!slot || !label) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("submitting");
+    try {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slot,
+          name,
+          company,
+          email,
+          phone,
+          message,
+          website,
+        }),
+      });
+
+      if (response.status === 409) {
+        setStatus("taken");
+        return;
+      }
+      if (!response.ok) throw new Error(`Booking failed: ${response.status}`);
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -89,84 +106,124 @@ export function BookingForm() {
         {t.bookingPage.intro}
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <div>
-            <label className={labelClass} htmlFor="name">
-              {t.bookingPage.name}
-            </label>
-            <input
-              id="name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className={`mt-2 ${fieldClass}`}
-            />
-          </div>
-          <div>
-            <label className={labelClass} htmlFor="company">
-              {t.bookingPage.company}
-            </label>
-            <input
-              id="company"
-              required
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              className={`mt-2 ${fieldClass}`}
-            />
-          </div>
-          <div>
-            <label className={labelClass} htmlFor="email">
-              {t.bookingPage.email}
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={`mt-2 ${fieldClass}`}
-            />
-          </div>
-          <div>
-            <label className={labelClass} htmlFor="phone">
-              {t.bookingPage.phone}
-            </label>
-            <input
-              id="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className={`mt-2 ${fieldClass}`}
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className={labelClass} htmlFor="message">
-            {t.bookingPage.message}
-          </label>
-          <textarea
-            id="message"
-            rows={4}
-            required
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder={t.bookingPage.messagePlaceholder}
-            className={`mt-2 resize-y ${fieldClass}`}
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="inline-flex h-10 items-center justify-center self-start rounded-[10px] bg-primary px-5 text-[14px] font-[510] tracking-[-0.011em] text-background transition-opacity duration-150 hover:opacity-90"
+      {status === "success" ? (
+        <div
+          className="shine-card mt-8 rounded-[10px] px-5 py-5"
+          role="status"
+          aria-live="polite"
         >
-          {t.bookingPage.submit}
-        </button>
+          <h2 className="text-[18px] font-[510] tracking-[-0.011em] text-primary">
+            {t.bookingPage.successTitle}
+          </h2>
+          <p className="mt-2 text-[14px] leading-[1.6] tracking-[-0.011em] text-tertiary">
+            {t.bookingPage.successBody}
+          </p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
+          <div className="absolute -left-[10000px]" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div>
+              <label className={labelClass} htmlFor="name">
+                {t.bookingPage.name}
+              </label>
+              <input
+                id="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className={`mt-2 ${fieldClass}`}
+              />
+            </div>
+            <div>
+              <label className={labelClass} htmlFor="company">
+                {t.bookingPage.company}
+              </label>
+              <input
+                id="company"
+                required
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className={`mt-2 ${fieldClass}`}
+              />
+            </div>
+            <div>
+              <label className={labelClass} htmlFor="email">
+                {t.bookingPage.email}
+              </label>
+              <input
+                id="email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`mt-2 ${fieldClass}`}
+              />
+            </div>
+            <div>
+              <label className={labelClass} htmlFor="phone">
+                {t.bookingPage.phone}
+              </label>
+              <input
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className={`mt-2 ${fieldClass}`}
+              />
+            </div>
+          </div>
 
-        <p className="text-[13px] leading-[1.6] tracking-[-0.011em] text-tertiary">
-          {t.bookingPage.note}
-        </p>
-      </form>
+          <div>
+            <label className={labelClass} htmlFor="message">
+              {t.bookingPage.message}
+            </label>
+            <textarea
+              id="message"
+              rows={4}
+              required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder={t.bookingPage.messagePlaceholder}
+              className={`mt-2 resize-y ${fieldClass}`}
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={status === "submitting" || !slot || !label}
+            className="inline-flex h-10 items-center justify-center self-start rounded-[10px] bg-primary px-5 text-[14px] font-[510] tracking-[-0.011em] text-background transition-opacity duration-150 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {status === "submitting"
+              ? t.bookingPage.submitting
+              : t.bookingPage.submit}
+          </button>
+
+          {status === "taken" || status === "error" ? (
+            <p
+              className="text-[13px] leading-[1.6] tracking-[-0.011em] text-red-700"
+              role="alert"
+            >
+              {status === "taken"
+                ? t.bookingPage.takenError
+                : t.bookingPage.genericError}
+            </p>
+          ) : null}
+
+          <p className="text-[13px] leading-[1.6] tracking-[-0.011em] text-tertiary">
+            {t.bookingPage.note}
+          </p>
+        </form>
+      )}
     </main>
   );
 }
