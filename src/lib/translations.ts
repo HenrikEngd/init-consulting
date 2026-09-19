@@ -95,37 +95,37 @@ const no: Dictionary = {
   meta: {
     title: "INIT Consulting",
     description:
-      "INIT er en forward deployed engineer for små norske tjenestebedrifter. En utvikler som jobber på innsiden, i systemene dere allerede bruker, en uke av gangen til fast pris.",
+      "En uke på innsiden: en utvikler jobber en hel arbeidsuke i systemene bedriften allerede bruker, til fast pris og med et avtalt resultat. For små norske tjenestebedrifter.",
   },
   nav: {
-    work: "Hva jeg gjør",
-    process: "Slik jobber jeg",
+    work: "Eksempler",
+    process: "Slik foregår det",
     pricing: "Priser",
     contact: "Kontakt",
     cta: "Ta en prat",
   },
   hero: {
-    title: "Forward deployed engineer. På innsiden hos dere.",
+    title: "En uke på innsiden. Fredag står noe i drift.",
     subtitle:
-      "En utvikler som jobber i systemene dere allerede bruker, sammen med folkene som bruker dem. En uke av gangen, til fast pris.",
+      "En utvikler jobber en hel arbeidsuke i systemene dere allerede bruker, sammen med folkene som bruker dem. Prisen og datoen er avtalt på forhånd.",
     ctaPrimary: "Fortell hva som tar tid",
   },
   principles: {
-    titleLead: "På innsiden.",
+    titleLead: "En uke av gangen.",
     titleRest:
-      "INIT jobber der arbeidet gjøres, i bedriftens egne systemer, og bygger det som trengs mens dere ser på.",
+      "Tjenesten er en hel arbeidsuke inne i bedriften, i systemene dere allerede har, med fast pris og et avtalt resultat.",
     items: [
       {
-        title: "Jeg sitter der jobben gjøres",
+        title: "Uken starter der jobben gjøres",
         desc: "Den første dagen går med til å se hvordan dere faktisk jobber. Det som tar tid, viser seg i rutinene, sjelden i et kravdokument.",
       },
       {
-        title: "Arbeid i systemene dere har",
-        desc: "Jeg bygger inni verktøyene dere allerede betaler for. Regnskap, CRM, e-post, regneark og det som ellers står i veien.",
+        title: "Alt bygges i systemene dere har",
+        desc: "Arbeidet skjer inne i verktøyene dere allerede betaler for. Regnskap, CRM, e-post, regneark og det som ellers står i veien.",
       },
       {
-        title: "En uke av gangen",
-        desc: "Hver uke har fast pris og et avtalt resultat. Dere bestemmer fredag om det blir en uke til.",
+        title: "Uken har fast pris",
+        desc: "Pris og dato er avtalt før uken starter. Fredag bestemmer dere selv om det blir en uke til.",
       },
     ],
   },
@@ -137,32 +137,32 @@ const no: Dictionary = {
       {
         number: "01",
         title: "Kort prat",
-        desc: "Du beskriver hva som tar tid. Vi avtaler hvilken uke jeg kommer, og hva uken skal ende med.",
+        desc: "Du forteller hva som tar tid. Sammen finner vi ut hvilken uke som passer, og hva uken skal ende med.",
       },
       {
         number: "02",
         title: "Mandag hos dere",
-        desc: "Jeg sitter sammen med dem som gjør jobben, går gjennom systemer og tilganger, og vi blir enige om hva som fikses først.",
+        desc: "Uken starter sammen med dem som gjør jobben. Vi går gjennom systemer og tilganger, og blir enige om hva som tas først.",
       },
       {
         number: "03",
         title: "Bygging midt i driften",
-        desc: "Det som bygges, testes samme dag av dem som skal bruke det. Du ser fremdriften hver ettermiddag.",
+        desc: "Det som bygges, testes samme dag av dem som skal bruke det. Dere ser fremdriften hver ettermiddag.",
       },
       {
         number: "04",
         title: "Fredag",
-        desc: "Det som virker, står i drift. Du får gjennomgang, enkel dokumentasjon og en ærlig anbefaling om en uke til er verdt det.",
+        desc: "Det som virker, står i drift. Dere får en gjennomgang, enkel dokumentasjon og en ærlig anbefaling om en uke til er verdt det.",
       },
     ],
   },
   projects: {
-    title: "Hva jeg gjør på innsiden",
+    title: "Hva en uke kan brukes til",
     subtitle:
-      "Eksempler på arbeid som gjøres i løpet av en uke, med tilbakemeldinger fra kundene det er levert til.",
-    titleEmpty: "Hva jeg gjør på innsiden",
+      "Eksempler på arbeid som får plass i én uke, med tilbakemeldinger fra kundene det er levert til.",
+    titleEmpty: "Hva en uke kan brukes til",
     subtitleEmpty:
-      "Eksempler på arbeid som gjøres i løpet av en uke. Vi starter med det som koster mest tid akkurat nå.",
+      "Eksempler på arbeid som får plass i én uke. Vi starter med det som koster mest tid akkurat nå.",
     metricLabel: "Mål",
     items: [
       {
@@ -213,7 +213,7 @@ const no: Dictionary = {
         name: "En uke på innsiden",
         price: "Fra 24 000 kr",
         priceNote: "Fast pris per uke",
-        desc: "For en uke der jeg jobber i deres systemer og tar det som koster mest tid akkurat nå.",
+        desc: "En hel arbeidsuke inne i bedriften, der det som koster mest tid akkurat nå blir tatt først.",
         features: [
           "Fem arbeidsdager, hos dere eller på nett",
           "Daglig kontakt med dem som gjør jobben",
@@ -246,20 +246,20 @@ const no: Dictionary = {
     subtitle: "Det viktigste å vite før den første uken.",
     items: [
       {
-        q: "Hva betyr forward deployed engineer?",
-        a: "Det er en utvikler som jobber inne i virksomheten som har problemet. Jeg sitter sammen med dere, i deres systemer og rutiner, og bygger det som trengs der og da. Begrepet kommer fra teknologiselskaper som sender ingeniørene sine ut til kundene for å bygge på stedet.",
+        q: "Hva er en uke på innsiden?",
+        a: "En hel arbeidsuke der en utvikler jobber inne i bedriften, i systemene og rutinene dere allerede har. Arbeidsmåten kalles forward deployed engineering. Den finnes fordi de beste forbedringene sjelden lar seg beskrive i et møte. De viser seg når noen sitter der jobben gjøres.",
       },
       {
-        q: "Hva kan INIT hjelpe med?",
+        q: "Hva kan en uke brukes til?",
         a: "Automatisering, integrasjoner, AI, rapportering, dataflyt og små interne verktøy. Du trenger ikke vite hvilken teknologi som passer. Beskriv hva som tar tid eller ikke fungerer.",
       },
       {
-        q: "Hvor mye rekker du på en uke?",
-        a: "Vanligvis én til tre konkrete forbedringer som står i drift fredag. Rekkefølgen avtales mandag, og du ser fremdriften hver dag.",
+        q: "Hvor mye rekker en uke?",
+        a: "Vanligvis én til tre konkrete forbedringer som står i drift fredag. Rekkefølgen avtales mandag, og dere ser fremdriften hver dag.",
       },
       {
-        q: "Må du sitte hos oss hele uken?",
-        a: "Nei. Uken kan kjøres hos dere, på nett eller delt. De fleste velger én til to dager på kontoret i starten og resten på nett.",
+        q: "Må uken kjøres hos oss?",
+        a: "Nei. Uken kan kjøres hos dere, på nett eller delt mellom de to. De fleste velger én til to dager på kontoret i starten og resten på nett.",
       },
       {
         q: "Må vi bytte systemene vi bruker?",
@@ -267,7 +267,7 @@ const no: Dictionary = {
       },
       {
         q: "Hvem jobber vi med?",
-        a: "INIT er et enkeltpersonsforetak. Du jobber direkte med den samme personen hele uken. Derfor tas det bare inn én uke av gangen.",
+        a: "INIT er et enkeltpersonsforetak. Dere jobber direkte med den samme personen hele uken. Derfor tas det bare inn én uke av gangen.",
       },
       {
         q: "Hvem eier det som bygges?",
@@ -275,7 +275,7 @@ const no: Dictionary = {
       },
       {
         q: "Hva om en hel uke er for mye?",
-        a: "Da sier jeg det før vi starter. Noen problemer er små nok til å løses på en dag eller to, og da avtaler vi det i stedet.",
+        a: "Noen problemer er små nok til å løses på en dag eller to. Da avtaler vi det i stedet, og dere får vite det før vi starter.",
       },
     ],
   },
@@ -318,7 +318,7 @@ const no: Dictionary = {
   },
   footer: {
     tagline:
-      "En forward deployed engineer for norske tjenestebedrifter. På innsiden, i systemene dere allerede bruker.",
+      "En uke på innsiden, for norske tjenestebedrifter. I systemene dere allerede bruker, til fast pris.",
     navTitle: "Sider",
     contactTitle: "Kontakt",
   },
@@ -328,37 +328,37 @@ const en: Dictionary = {
   meta: {
     title: "INIT Consulting",
     description:
-      "INIT is a forward deployed engineer for small Norwegian service businesses. A developer who works on the inside, in the systems you already use, one week at a time at a fixed price.",
+      "A week on the inside: a developer spends a full working week in the systems your business already uses, at a fixed price and with an agreed result. For small Norwegian service businesses.",
   },
   nav: {
-    work: "What I do",
-    process: "How I work",
+    work: "Examples",
+    process: "How it works",
     pricing: "Pricing",
     contact: "Contact",
     cta: "Have a chat",
   },
   hero: {
-    title: "Forward deployed engineer. On the inside with you.",
+    title: "A week on the inside. Something works by Friday.",
     subtitle:
-      "A developer working in the systems you already use, alongside the people who use them. One week at a time, at a fixed price.",
+      "A developer spends a full working week in the systems you already use, alongside the people who use them. The price and the date are agreed in advance.",
     ctaPrimary: "Tell me what takes time",
   },
   principles: {
-    titleLead: "On the inside.",
+    titleLead: "One week at a time.",
     titleRest:
-      "INIT works where the work happens, in your own systems, and builds what is needed while you watch.",
+      "The service is a full working week inside the business, in the systems you already have, at a fixed price and with an agreed result.",
     items: [
       {
-        title: "I sit where the work happens",
+        title: "The week starts where the work happens",
         desc: "The first day goes on seeing how you actually work. What takes time shows up in the routines, rarely in a requirements document.",
       },
       {
-        title: "Work in the systems you have",
-        desc: "I build inside the tools you already pay for. Accounting, CRM, email, spreadsheets and whatever else is in the way.",
+        title: "Everything is built in the systems you have",
+        desc: "The work happens inside the tools you already pay for. Accounting, CRM, email, spreadsheets and whatever else is in the way.",
       },
       {
-        title: "One week at a time",
-        desc: "Every week has a fixed price and an agreed result. On Friday you decide whether there is another one.",
+        title: "The week has a fixed price",
+        desc: "The price and the date are agreed before the week starts. On Friday you decide whether there is another one.",
       },
     ],
   },
@@ -370,12 +370,12 @@ const en: Dictionary = {
       {
         number: "01",
         title: "Short call",
-        desc: "You describe what takes time. We agree which week I come, and what the week should end with.",
+        desc: "You describe what takes time. Together we find the week that suits, and what it should end with.",
       },
       {
         number: "02",
         title: "Monday with you",
-        desc: "I sit with the people doing the work, go through systems and access, and we agree what gets fixed first.",
+        desc: "The week starts alongside the people doing the work. We go through systems and access, and agree what gets taken first.",
       },
       {
         number: "03",
@@ -390,12 +390,12 @@ const en: Dictionary = {
     ],
   },
   projects: {
-    title: "What I do on the inside",
+    title: "What a week can be used for",
     subtitle:
-      "Examples of work done inside a week, with feedback from the companies it was delivered to.",
-    titleEmpty: "What I do on the inside",
+      "Examples of work that fits inside one week, with feedback from the companies it was delivered to.",
+    titleEmpty: "What a week can be used for",
     subtitleEmpty:
-      "Examples of work done inside a week. We start with whatever costs the most time right now.",
+      "Examples of work that fits inside one week. We start with whatever costs the most time right now.",
     metricLabel: "Goal",
     items: [
       {
@@ -446,7 +446,7 @@ const en: Dictionary = {
         name: "A week on the inside",
         price: "From 24,000 NOK",
         priceNote: "Fixed price per week",
-        desc: "For a week where I work in your systems and take on whatever costs the most time right now.",
+        desc: "A full working week inside the business, where whatever costs the most time right now is taken first.",
         features: [
           "Five working days, on site or remote",
           "Daily contact with the people doing the work",
@@ -479,11 +479,11 @@ const en: Dictionary = {
     subtitle: "The main things to know before the first week.",
     items: [
       {
-        q: "What does forward deployed engineer mean?",
-        a: "It is a developer who works inside the business that has the problem. I sit with you, in your systems and routines, and build what is needed on the spot. The term comes from technology companies that send their engineers out to customers to build on site.",
+        q: "What is a week on the inside?",
+        a: "A full working week where a developer works inside the business, in the systems and routines you already have. The way of working is called forward deployed engineering. It exists because the best improvements are rarely described in a meeting. They show up when someone sits where the work happens.",
       },
       {
-        q: "What can INIT help with?",
+        q: "What can a week be used for?",
         a: "Automation, integrations, AI, reporting, data flows and small internal tools. You do not need to know which technology fits. Describe what takes time or does not work.",
       },
       {
@@ -491,7 +491,7 @@ const en: Dictionary = {
         a: "Usually one to three concrete improvements that are running by Friday. The order is agreed on Monday, and you see progress every day.",
       },
       {
-        q: "Do you have to sit with us all week?",
+        q: "Does the week have to run at our offices?",
         a: "No. The week can run at your offices, remotely or split between the two. Most choose one or two days in the office at the start and the rest remote.",
       },
       {
@@ -508,7 +508,7 @@ const en: Dictionary = {
       },
       {
         q: "What if a whole week is too much?",
-        a: "I will say so before we begin. Some problems are small enough to solve in a day or two, and then we agree on that instead.",
+        a: "Some problems are small enough to solve in a day or two. Then we agree on that instead, and you will know before we begin.",
       },
     ],
   },
@@ -551,7 +551,7 @@ const en: Dictionary = {
   },
   footer: {
     tagline:
-      "A forward deployed engineer for Norwegian service businesses. On the inside, in the systems you already use.",
+      "A week on the inside, for Norwegian service businesses. In the systems you already use, at a fixed price.",
     navTitle: "Pages",
     contactTitle: "Contact",
   },

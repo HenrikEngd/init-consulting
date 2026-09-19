@@ -5,9 +5,9 @@ that has to sit beside it: a page, a slide, a banner, an email. It records the
 decisions and the reasons, so a new piece can be made in the same hand rather
 than by copying one existing piece.
 
-INIT is a one-person consultancy that works as a forward deployed engineer for
-small Norwegian service businesses: a developer who sits inside the business,
-in the systems it already uses, for an agreed week at a fixed price.
+INIT is a one-person consultancy that sells one thing, a week on the inside: a
+developer spends a full working week in the customer's own systems, at a fixed
+price and with an agreed result, for small Norwegian service businesses.
 Everything below follows from that: sparse, exact, nothing decorative, nothing
 that promises more than one week at a time.
 
@@ -221,13 +221,17 @@ Motion is used to show things arriving and responding, never to decorate.
 
 - **Norwegian (bokmål) is the default**; English is a toggle. Write the
   Norwegian first and translate, not the other way round.
-- **Positioning phrases** to keep verbatim: "Forward deployed engineer. På
-  innsiden hos dere.", "På innsiden.", "En uke av gangen", "En uke på
-  innsiden", "Fortell hva som tar tid", "Trygg drift".
-- **The English term is used once, then explained.** "Forward deployed
-  engineer" appears in the hero, the FAQ's first question and the footer, and
-  every sentence around it is plain Norwegian. A reader who has never met the
-  term should understand the offer from the sentence that follows it.
+- **Positioning phrases** to keep verbatim: "En uke på innsiden.", "Fredag
+  står noe i drift.", "En uke av gangen.", "Fortell hva som tar tid", "Trygg
+  drift".
+- **The service is the product, never the job title.** The page sells a week,
+  a thing a business can buy, and describes what that week gives. It does not
+  introduce the person as a role. Write "uken starter der jobben gjøres", not
+  "jeg sitter der jobben gjøres": the first describes what the customer gets,
+  the second is a claim about the speaker and reads as a résumé.
+- **The method is named once.** "Forward deployed engineering" appears in the
+  first FAQ answer, as the name of how the week works, and nowhere else. A
+  reader who has never met the term should understand the offer without it.
 - Sentences are short and concrete: what takes time, what changes, what it
   costs, when it is delivered. Numbers are given plainly (24 000 kr, fem
   arbeidsdager, 1 490 kr/mnd).

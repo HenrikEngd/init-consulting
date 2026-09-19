@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s — INIT Consulting",
   },
   description:
-    "INIT er en forward deployed engineer for små norske tjenestebedrifter. En utvikler som jobber på innsiden, i systemene dere allerede bruker, en uke av gangen til fast pris.",
+    "En uke på innsiden: en utvikler jobber en hel arbeidsuke i systemene bedriften allerede bruker, til fast pris og med et avtalt resultat. For små norske tjenestebedrifter.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
